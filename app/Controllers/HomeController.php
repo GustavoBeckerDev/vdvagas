@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Core\Controller;
+
+class HomeController extends Controller
+{
+    public function index()
+    {
+        $data = [
+            
+        ];
+
+        $dataheader = [
+            'title' => 'VD Vagas'
+        ];
+       
+        $this->view('layouts/header', $dataheader);
+        $this->view('home/home', $data);
+        $this->view('layouts/footer');
+
+    }
+}
