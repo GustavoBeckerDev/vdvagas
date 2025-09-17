@@ -10,8 +10,18 @@
 </head>
 <body>
     <header>
-        <nav>
-            <h1 class="title">OLA MUNDO</h1>
-        </nav>
+
+        <div class="header logo">
+            <h1>OI</h1>
+        </div>
+
+        <div class="header ul">
+            <h1>OI</h1>
+        </div>
+
+        <div class="header btns">
+            <h1>OI</h1>
+        </div>
+
     </header>
     <main>
