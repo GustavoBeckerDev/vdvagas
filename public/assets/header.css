@@ -22,7 +22,7 @@ header {
 
 /* Logo */
 .logo-container img {
-    height: 100px;
+    height: 110px;
     transition: transform 0.3s;
 }
 
