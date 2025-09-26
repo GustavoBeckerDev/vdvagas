@@ -1,0 +1,54 @@
+/* --- FOOTER --- */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 40px 40px;
+    text-align: center;
+    position: relative;
+}
+
+/* Linha igual ao header, mas no topo */
+.footer-top-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #000, #00CC66, #000);
+    border-radius: 0;
+    /* brilho removido */
+}
+
+/* Conteúdo do footer */
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer nav a:hover {
+    color: #00CC66;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    footer {
+        padding: 25px 20px 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 20px 15px 30px;
+    }
+    footer nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}

@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'teaching/mvc',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'afa377caf91194319ab8efb1a7406b9a4214fb18',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -38,9 +38,9 @@
             'dev_requirement' => false,
         ),
         'teaching/mvc' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'afa377caf91194319ab8efb1a7406b9a4214fb18',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

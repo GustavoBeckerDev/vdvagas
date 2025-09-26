@@ -1,27 +1,32 @@
+<?php
+$logoPath = $baseUrl . "/public/imagens/logo.png";
+?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($title) ?></title>
-    <link rel="stylesheet" href="public/assets/header.css">
-
+    <title><?= $title ?? 'VD Vagas' ?></title>
+    <!-- CSS do Header -->
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/header.css">
+    <!-- CSS da Home (ou páginas específicas) -->
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/home.css">
 </head>
 <body>
     <header>
-
-        <div class="header logo">
-            <h1>OI</h1>
+        <div class="logo-container">
+            <img src="<?= $logoPath ?>" alt="Logo VD Vagas">
         </div>
-
-        <div class="header ul">
-            <h1>OI</h1>
+        <nav>
+            <a href="<?= $baseUrl ?>/inicio">Início</a><span class="separator">|</span>
+            <a href="<?= $baseUrl ?>/vagas">Vagas</a><span class="separator">|</span>
+            <a href="<?= $baseUrl ?>/sobre">Sobre Nós</a><span class="separator">|</span>
+            <a href="<?= $baseUrl ?>/contato">Contato</a><span class="separator">|</span>
+            <a href="<?= $baseUrl ?>/planos">Planos</a>
+        </nav>
+        <div class="header-buttons">
+            <button class="btn btn-login">Login</button>
+            <button class="btn btn-signup">Cadastre-se</button>
         </div>
-
-        <div class="header btns">
-            <h1>OI</h1>
-        </div>
-
+        <div class="header-bottom-gradient"></div>
     </header>
-    <main>

@@ -8,17 +8,19 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = [
-            
-        ];
+        $baseUrl = '/vdvagas';
 
         $dataheader = [
-            'title' => 'VD Vagas'
+            'title' => 'VD Vagas',
+            'baseUrl' => $baseUrl
         ];
-       
+
+        $data = [
+            'baseUrl' => $baseUrl
+        ];
+
         $this->view('layouts/header', $dataheader);
         $this->view('home/home', $data);
-        $this->view('layouts/footer');
-
+        $this->view('layouts/footer', $data);
     }
 }
