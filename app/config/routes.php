@@ -6,8 +6,13 @@
 // Rota para a página inicial
 $router->get('/', 'HomeController@index');
 
-
 $router->get('/vagas', 'VagasController@index');
+
+$router->get('/about', 'AboutController@index');
+
+$router->get('/contato', 'ContatoController@index');
+
+$router->get('/planos', 'PlanosController@index');
 
 
 
