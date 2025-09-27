@@ -18,9 +18,9 @@ $logoPath = $baseUrl . "/public/imagens/logo.png";
             <img src="<?= $logoPath ?>" alt="Logo VD Vagas">
         </div>
         <nav>
-            <a href="<?= $baseUrl ?>/inicio">Início</a><span class="separator">|</span>
+            <a href="<?= $baseUrl ?>/">Início</a><span class="separator">|</span>
             <a href="<?= $baseUrl ?>/vagas">Vagas</a><span class="separator">|</span>
-            <a href="<?= $baseUrl ?>/sobre">Sobre Nós</a><span class="separator">|</span>
+            <a href="<?= $baseUrl ?>/about">Sobre Nós</a><span class="separator">|</span>
             <a href="<?= $baseUrl ?>/contato">Contato</a><span class="separator">|</span>
             <a href="<?= $baseUrl ?>/planos">Planos</a>
         </nav>

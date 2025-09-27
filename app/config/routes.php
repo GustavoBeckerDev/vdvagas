@@ -4,22 +4,18 @@
 // O roteador irá carregá-lo para saber o que fazer.
 
 // Rota para a página inicial
-$router->get('/', function() {
-    // Redireciona a raiz do projeto para /inicio
-    header('Location: /vdvagas/inicio');
-    exit;
-});
-
-// Rota /vdvagas também para garantir acesso direto
-$router->get('/vdvagas', function() {
-    header('Location: /vdvagas/inicio');
-    exit;
-});
-
-// Rota /inicio para a página inicial de fato
-$router->get('/inicio', 'HomeController@index');
 $router->get('/', 'HomeController@index');
-$router->get('/vdvagas', 'HomeController@index');
+
+$router->get('/vagas', 'VagasController@index');
+
+$router->get('/about', 'AboutController@index');
+
+$router->get('/contato', 'ContatoController@index');
+
+$router->get('/planos', 'PlanosController@index');
+
+
+
 
 // // Rotas de Autenticação
 // // A mesma URI pode ter ações diferentes para GET e POST
