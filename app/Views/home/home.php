@@ -76,9 +76,12 @@
         </div>
     </section>
 
-    <!-- CONTATO -->
-   <section class="contact">
-    <h2>Contato</h2>
+<!-- CONTATO -->
+<section class="contact">
+    <h2 class="contact-title">Contato</h2>
+    <div class="header-bottom-gradient"></div>
+
+    <!-- formulário -->
     <div class="contact-wrapper">
         <form class="contact-form" action="#" method="POST">
             <label for="name">Nome Completo</label>

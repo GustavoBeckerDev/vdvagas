@@ -13,17 +13,25 @@ body {
 /* --- HEADER --- */
 header {
     background-color: #000;
-    padding: 0px 20px;
+    padding: 0 20px;            /* remove padding vertical, deixa só laterais */
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 0;           /* não precisa margem extra */
 }
 
 /* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo-container img {
-    height: 120px;
+    max-height: 180px;          /* tamanho da logo */
+    width: auto;
+    margin: 0;                  /* <<< remove margens extras */
+    object-fit: contain;
     transition: transform 0.3s;
 }
 
@@ -94,8 +102,8 @@ nav .separator {
 
 /* --- BARRA DEGRADÊ --- */
 .header-bottom-gradient {
-    position: absolute;
-    bottom: 0;
+    position: absolute;   /* fixa dentro do header */
+    bottom: 0;            /* colada no rodapé do header */
     left: 0;
     width: 100%;
     height: 3px;
@@ -109,6 +117,7 @@ nav .separator {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        padding-bottom: 10px; /* garante espaço p/ linha */
     }
 
     nav {
@@ -119,10 +128,14 @@ nav .separator {
     .header-buttons {
         justify-content: center;
     }
+
+    .logo-container img {
+        max-height: 140px; /* tablets */
+    }
 }
 
 @media (max-width: 600px) {
     .logo-container img {
-        height: 80px;
+        max-height: 100px; /* celulares */
     }
 }
