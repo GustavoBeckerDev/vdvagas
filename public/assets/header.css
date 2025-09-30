@@ -28,7 +28,7 @@ header {
 }
 
 .logo-container img {
-    max-height: 180px;          /* tamanho da logo */
+    max-height: 130px;          /* tamanho da logo */
     width: auto;
     margin: 0;                  /* <<< remove margens extras */
     object-fit: contain;

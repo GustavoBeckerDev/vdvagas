@@ -1,5 +1,5 @@
 git add .
 
-git commit -m " mensagem commit"
+git commit -m "MENSAGEM DO COMMIT"
 
-git push
+git push origin feature/leticia
