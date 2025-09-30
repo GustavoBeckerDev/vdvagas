@@ -48,6 +48,8 @@
 
     <!-- SOBRE NÓS -->
     <section class="about">
+        <h2 class="about-title">Sobre Nós</h2>
+
         <!-- Faixa degradê preto → verde → preto -->
         <div class="about-banner-bg">
             <!-- Texto acima do retângulo, centralizado -->
@@ -59,7 +61,7 @@
             <!-- Retângulo preto centralizado -->
             <div class="about-banner">
                 <div class="about-image">
-                    <img src="https://i.pinimg.com/736x/93/47/f5/9347f5fa5d732c8d6d9aef9dcd327b24.jpg" alt="Imagem sobre nós">
+                    <img src="/vdvagas/public/imagens/capi_conputer.png" alt="Imagem sobre nós">
                 </div>
                 <div class="about-right-text">
                     <p>
@@ -77,34 +79,33 @@
     </section>
 
     <!-- CONTATO -->
-   <section class="contact">
-    <h2>Contato</h2>
-    <div class="contact-wrapper">
-        <form class="contact-form" action="#" method="POST">
-            <label for="name">Nome Completo</label>
-            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+    <section class="contact">
+        <h2 class="contact-title">Contato</h2>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Seu email" required>
+        <!-- formulário -->
+        <div class="contact-wrapper">
+            <form class="contact-form" action="#" method="POST">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required>
 
-            <label for="company">Nome da Empresa (Opcional)</label>
-            <input type="text" id="company" name="company" placeholder="Company name">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Seu email" required>
 
-            <label for="message">Mensagem</label>
-            <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                <label for="company">Nome da Empresa (Opcional)</label>
+                <input type="text" id="company" name="company" placeholder="Company name">
 
-            <div class="recaptcha-wrapper">
-                <input type="checkbox" id="not_robot" name="not_robot" required>
-                <label for="not_robot">Eu não sou um robô</label>
-            </div>
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." required></textarea>
 
-            <button type="submit" class="contact-btn">Confirmar</button>
-        </form>
-    </div>
-</section>
+                <div class="recaptcha-wrapper">
+                    <input type="checkbox" id="not_robot" name="not_robot" required>
+                    <label for="not_robot">Eu não sou um robô</label>
+                </div>
 
-
+                <button type="submit" class="contact-btn">Confirmar</button>
+            </form>
+        </div>
+    </section>
 
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/footer.css">
-
 </main>
