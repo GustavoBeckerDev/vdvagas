@@ -41,9 +41,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 40px 60px 40px;
+    padding: 20px 40px 100px 40px; /* espaço inferior para a linha */
     flex-wrap: wrap;
     gap: 100px;
+    position: relative; /* necessário para a linha ::after */
 }
 
 .hero-text {
@@ -75,6 +76,18 @@ body {
     margin-top: 20px;
 }
 
+/* Linha gradiente */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00CC66, transparent);
+}
+
+
 /* RESPONSIVIDADE HERO */
 @media (max-width: 1024px) {
     .hero {
@@ -100,7 +113,17 @@ body {
     padding-top: 20px;
 }
 
-/* removido ::before que criava barra duplicada */
+/* Linha decorativa só no título da seção vagas */
+.jobs h2::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00CC66, transparent);
+}
 
 /* Filtros */
 .filters {
@@ -173,11 +196,45 @@ body {
     padding: 15px 30px;
 }
 
+/* Linha gradiente abaixo dos Jobs */
+.jobs::after {
+    content: "";
+    display: block;
+    margin-top: 40px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00CC66, transparent);
+}
+
+
 /* --- SOBRE NÓS --- */
 .about {
     padding: 60px 0;
     background: #000;
     color: #fff;
+}
+
+/* Título da seção Sobre Nós */
+.about-title {
+    position: relative;
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #00CC66;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.about-title::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00CC66, transparent);
 }
 
 /* Faixa verde com gradiente */
@@ -194,7 +251,7 @@ body {
 /* Texto acima do retângulo */
 .about-top-text {
     text-align: center;
-    color: #000;
+    color: #fafafa;
     font-weight: bold;
     font-size: 1.3rem;
     margin-bottom: 40px;
