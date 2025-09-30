@@ -9,7 +9,7 @@ body {
 /* Título principal */
 .main-title {
   text-align: center;
-  font-size: 80px;
+  font-size: clamp(28px, 6vw, 60px); /* adapta entre 28px e 60px */
   font-weight: bold;
   margin-top: 30px;
   margin-bottom: 40px;
@@ -32,14 +32,15 @@ body {
   background: #000;
   border-top: 2px solid #00ff99;
   border-bottom: 2px solid #00ff99;
-  padding: 20px 0;
+  padding: 15px 0;
   width: 100%;
   max-width: 1000px;
+  flex-wrap: wrap; /* permite quebrar linha em telas menores */
 }
 
 .plano-title {
   color: #00ff99;
-  font-size: 40px;
+  font-size: clamp(18px, 4vw, 32px);
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
@@ -48,28 +49,29 @@ body {
 /* Cards principais (Free, User, Enterprise) */
 .card-planos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  max-width: 1800px;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  width: 90%;
 }
 
 .card {
   background-color: #111;
-  padding: 60px;
+  padding: clamp(16px, 4vw, 40px);
   border-radius: 12px;
   text-align: center;
-  font-size: 35px;
+  font-size: clamp(14px, 2.5vw, 20px);
   line-height: 1.5em;
   border: 1px solid #00ff99;
   box-shadow: 0px 0px 15px rgba(0, 255, 153, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* suaviza animação */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-12px); /* 🔥 salta levemente pra cima */
-  box-shadow: 0px 12px 30px rgba(0, 255, 153, 0.9); /* 🔥 sombra verde intensa */
+  transform: translateY(-12px);
+  box-shadow: 0px 12px 30px rgba(0, 255, 153, 0.9);
 }
+
 /* Seção seleção de planos */
 .select-planos {
   margin-top: 60px;
@@ -82,40 +84,21 @@ body {
   margin-bottom: 40px;
   font-family: "Corben", sans-serif;
   font-weight: 700;
-  font-size: 60px;
-
-  /* 🌟 efeito cromado verde */
-  background: linear-gradient(
-    90deg,
-    #000302,
-    #00ff99,
-    #00cc66,
-    #00ff99,
-    #000000
-  );
+  font-size: clamp(24px, 5vw, 40px);
+  
   background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
 
- 
-  animation: shine-green 11 s linear infinite;
 }
-
-@keyframes shine-green {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
-
 
 /* Cards Premium */
 .select-card {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 20px;
   margin-bottom: 30px;
-  align-items: stretch; /* 🔥 Faz todos os cards terem a mesma altura */
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .card-premium {
@@ -123,32 +106,30 @@ body {
   border: 1px solid #00ff99;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 255, 153, 0.4);
-  padding: 20px;
-  min-width: 1000px;
-  flex: 1;            /* 🔥 Faz os cards ocuparem o mesmo espaço */
+  padding: clamp(16px, 3vw, 30px);
+  flex: 1 1 280px; /* adapta para mobile */
   display: flex;
   flex-direction: column;
-  
 }
 
 .card-title {
-  font-size: 50px;
+  font-size: clamp(20px, 4vw, 32px);
   font-weight: bold;
   color: #00ff99;
   margin-bottom: 15px;
   text-align: center;
 }
 
-
 .card-list {
-  list-style: none;
+  list-style: disc;
+  list-style-position: inside;
   padding: 0;
   margin: 0;
 }
 
 .card-list li {
   margin-bottom: 8px;
-  font-size:30px;
+  font-size: clamp(14px, 2.5vw, 18px);
 }
 
 /* Botão assinar */
@@ -160,13 +141,12 @@ body {
 .assinar-button input {
   background-color: #00ff99;
   border: none;
-  padding: 12px 40px;
+  padding: 12px 30px;
   border-radius: 8px;
-  font-size: 50px;
+  font-size: clamp(16px, 4vw, 24px);
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  border-top:20px;
 }
 
 .assinar-button input:hover {
@@ -176,10 +156,10 @@ body {
 
 /* Faixa de fundo da seleção */
 .select-banner-bg {
-  position:relative;
-  margin-top: 100px;
+  position: relative;
+  margin-top: 60px;
   background: linear-gradient(to right, #000, #00CC66 50%, #000);
-  padding: 60px 20px;
+  padding: clamp(20px, 5vw, 60px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,16 +167,9 @@ body {
 }
 
 .select-card ul {
- 
-
-  width: 450px;
-  min-height: 300px;
-  font-size: 16px;
-  line-height: 2.3em;
-  
-
-  list-style: disc;       /* 🔥 ativa as bolinhas */
-  list-style-position: inside; /* 🔥 bolinhas ficam dentro da caixa */
-  text-align: left;       /* melhor visual alinhado à esquerda */
+  width: 100%;
+  max-width: 400px;
+  min-height: 200px;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.8em;
 }
-
