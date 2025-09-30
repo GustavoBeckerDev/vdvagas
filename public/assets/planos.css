@@ -1,0 +1,202 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Título principal */
+.main-title {
+  text-align: center;
+  font-size: 80px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+/* Seção dos planos */
+.menu-planos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Banner/faixa com os 3 títulos */
+.planos-banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #000;
+  border-top: 2px solid #00ff99;
+  border-bottom: 2px solid #00ff99;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.plano-title {
+  color: #00ff99;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Cards principais (Free, User, Enterprise) */
+.card-planos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1800px;
+  width: 100%;
+}
+
+.card {
+  background-color: #111;
+  padding: 60px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 35px;
+  line-height: 1.5em;
+  border: 1px solid #00ff99;
+  box-shadow: 0px 0px 15px rgba(0, 255, 153, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* suaviza animação */
+}
+
+.card:hover {
+  transform: translateY(-12px); /* 🔥 salta levemente pra cima */
+  box-shadow: 0px 12px 30px rgba(0, 255, 153, 0.9); /* 🔥 sombra verde intensa */
+}
+/* Seção seleção de planos */
+.select-planos {
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: linear-gradient(to top, rgba(0, 255, 153, 0.15), transparent);
+}
+
+.select-planos h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Corben", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+
+  /* 🌟 efeito cromado verde */
+  background: linear-gradient(
+    90deg,
+    #000302,
+    #00ff99,
+    #00cc66,
+    #00ff99,
+    #000000
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+ 
+  animation: shine-green 11 s linear infinite;
+}
+
+@keyframes shine-green {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+
+/* Cards Premium */
+.select-card {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+  align-items: stretch; /* 🔥 Faz todos os cards terem a mesma altura */
+}
+
+.card-premium {
+  background-color: #000;
+  border: 1px solid #00ff99;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.4);
+  padding: 20px;
+  min-width: 1000px;
+  flex: 1;            /* 🔥 Faz os cards ocuparem o mesmo espaço */
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.card-title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #00ff99;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-list li {
+  margin-bottom: 8px;
+  font-size:30px;
+}
+
+/* Botão assinar */
+.assinar-button {
+  display: flex;
+  justify-content: center;
+}
+
+.assinar-button input {
+  background-color: #00ff99;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border-top:20px;
+}
+
+.assinar-button input:hover {
+  background-color: #ffe600;
+  box-shadow: 0 0 12px #e9fa4d;
+}
+
+/* Faixa de fundo da seleção */
+.select-banner-bg {
+  position:relative;
+  margin-top: 100px;
+  background: linear-gradient(to right, #000, #00CC66 50%, #000);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.select-card ul {
+ 
+
+  width: 450px;
+  min-height: 300px;
+  font-size: 16px;
+  line-height: 2.3em;
+  
+
+  list-style: disc;       /* 🔥 ativa as bolinhas */
+  list-style-position: inside; /* 🔥 bolinhas ficam dentro da caixa */
+  text-align: left;       /* melhor visual alinhado à esquerda */
+}
+
