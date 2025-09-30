@@ -59,7 +59,7 @@
             <!-- Retângulo preto centralizado -->
             <div class="about-banner">
                 <div class="about-image">
-                    <img src="https://i.pinimg.com/736x/93/47/f5/9347f5fa5d732c8d6d9aef9dcd327b24.jpg" alt="Imagem sobre nós">
+                    <img src="/vdvagas/public/imagens/capi_conputer.png" alt="Imagem sobre nós">
                 </div>
                 <div class="about-right-text">
                     <p>
