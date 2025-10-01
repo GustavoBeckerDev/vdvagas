@@ -26,7 +26,31 @@ $logoPath = $baseUrl . "/public/imagens/logo.png";
         </nav>
         <div class="header-buttons">
             <button class="btn btn-login">Login</button>
+            <script>
+                document.addEventListener('DOMContentLoaded',()=>{
+                    const botaoLogin = document.querySelector(".btn-login");
+                    console.log(botaoLogin)
+                    let modalLogin = document.getElementById('dialogLog');
+
+                    botaoLogin.addEventListener('click', ()=>{
+                        modalLogin.toggleAttribute('open');
+                    }); 
+                });
+            </script>
+
             <button class="btn btn-signup">Cadastre-se</button>
+
+            <script>
+                document.addEventListener('DOMContentLoaded',()=>{
+                    const botaoCadastro = document.querySelector(".btn-signup");
+                    console.log(botaoCadastro)
+                    let modalCadastro = document.getElementById('dialogCad');
+
+                    botaoCadastro.addEventListener('click', ()=>{
+                        modalCadastro.toggleAttribute('open');
+                    }); 
+                });
+            </script>
         </div>
         <div class="header-bottom-gradient"></div>
     </header>
