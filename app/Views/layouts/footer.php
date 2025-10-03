@@ -1,4 +1,7 @@
 <footer>
+
+    <div class="footer-top-gradient"></div>
+    
     <div class="footer-content">
         <p>&copy; <?= date('Y') ?> VD Vagas. Todos os direitos reservados.</p>
         <nav>
@@ -9,6 +12,5 @@
             <a href="<?= $baseUrl ?>/planos">Planos</a>
         </nav>
     </div>
-    <div class="footer-top-gradient"></div>
 
 </footer>

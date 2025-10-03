@@ -39,10 +39,14 @@ body {
 /* --- HERO --- */
 .hero {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 40px 80px 40px; /* topo = 0 */
+    padding: 20px 40px 100px 40px;
+    /* espaço inferior para a linha */
     flex-wrap: wrap;
+    gap: 100px;
+    position: relative;
+    /* necessário para a linha ::after */
 }
 
 .hero-text {
@@ -74,12 +78,25 @@ body {
     margin-top: 20px;
 }
 
+/* Linha gradiente */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00CC66;
+}
+
+
 /* RESPONSIVIDADE HERO */
 @media (max-width: 1024px) {
     .hero {
         flex-direction: column-reverse;
         text-align: center;
     }
+
     .hero-text {
         max-width: 100%;
     }
@@ -99,16 +116,19 @@ body {
     padding-top: 20px;
 }
 
+/* Linha decorativa só no título da seção vagas */
 .jobs h2::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, #000, #00CC66 50%, #000);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00CC66, transparent);
 }
 
+/* Filtros */
 .filters {
     display: flex;
     justify-content: center;
@@ -152,7 +172,7 @@ body {
     background: #111;
     border: 1px solid #00CC66;
     border-radius: 12px;
-    padding: 30px; /* aumentado */
+    padding: 30px;
     text-align: left;
     color: #fff;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -179,11 +199,45 @@ body {
     padding: 15px 30px;
 }
 
+/* Linha gradiente abaixo dos Jobs */
+.jobs::after {
+    content: "";
+    display: block;
+    margin-top: 40px;
+    width: 100%;
+    height: 2px;
+    background: #00CC66;
+}
+
+
 /* --- SOBRE NÓS --- */
 .about {
     padding: 60px 0;
     background: #000;
     color: #fff;
+}
+
+/* Título da seção Sobre Nós */
+.about-title {
+    position: relative;
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #00CC66;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.about-title::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00CC66, transparent);
 }
 
 /* Faixa verde com gradiente */
@@ -200,7 +254,7 @@ body {
 /* Texto acima do retângulo */
 .about-top-text {
     text-align: center;
-    color: #000;
+    color: #fafafa;
     font-weight: bold;
     font-size: 1.3rem;
     margin-bottom: 40px;
@@ -213,7 +267,7 @@ body {
     justify-content: space-between;
     gap: 30px;
     background-color: #111;
-    padding: 60px; /* aumentado */
+    padding: 60px;
     border-radius: 20px;
     max-width: 1000px;
     width: 90%;
@@ -245,14 +299,14 @@ body {
 }
 
 .social-icons a {
-    color: #00CC66;
+    color: #000000;
     font-size: 1.5rem;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .social-icons a:hover {
-    color: #009944;
+    color: #000000;
 }
 
 /* RESPONSIVIDADE SOBRE */
@@ -261,9 +315,11 @@ body {
         flex-direction: column;
         text-align: center;
     }
+
     .about-right-text {
         text-align: center;
     }
+
     .about-image img {
         margin-bottom: 20px;
     }
@@ -277,38 +333,46 @@ body {
 
 /* --- CONTATO --- */
 .contact {
-    padding: 80px 20px;
+    padding: 80px 20px 80px 20px;
     background: #000;
     color: #00CC66;
-    text-align: center; /* centraliza título e formulário */
     font-family: 'Arial', sans-serif;
+    text-align: center;
 }
 
-.contact h2 {
+.contact-title {
+    position: relative;
+    display: inline-block;
     font-size: 2.2rem;
-    margin-bottom: 50px;
     font-weight: bold;
+    color: #00CC66;
+    margin-bottom: 40px;
 }
 
-/* Retângulo do formulário */
+/* Barrinha exclusiva só no título Contato */
+.contact-title::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00CC66, transparent);
+}
+
+/* Caixa preta do formulário */
 .contact-wrapper {
     max-width: 500px;
     margin: 0 auto;
-    padding: 60px 50px; /* aumentado */
+    padding: 60px 50px;
     border: 2px solid #00CC66;
     border-radius: 25px;
-    background-color: #000000;
-    display: flex;
-    flex-direction: column;
-    text-align: center; /* centraliza inputs e recaptcha */
+    background-color: #000;
+    text-align: left;
 }
 
-/* Espaçamento consistente entre campos */
-.contact-form > * {
-    margin-bottom: 25px;
-}
-
-/* Labels acima dos campos */
+/* Formulário */
 .contact-form label {
     font-weight: bold;
     display: block;
@@ -318,27 +382,26 @@ body {
     font-size: 0.95rem;
 }
 
-/* Inputs e textarea */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 14px 12px;
     border-radius: 10px;
     border: 1px solid #00CC66;
-    background: #111;
+    background: #000;
     color: #fff;
     outline: none;
     font-size: 1rem;
     transition: all 0.3s;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #00ff88;
-    box-shadow: none; /* remove brilho */
+/* inputs ocupam 100%, mas o botão NÃO */
+.contact-form>*:not(.contact-btn) {
+    margin-bottom: 25px;
+    width: 100%;
 }
 
-/* Checkbox */
+/* Caixa reCAPTCHA/checkbox */
 .recaptcha-wrapper {
     display: flex;
     align-items: center;
@@ -347,7 +410,16 @@ body {
     padding: 12px 15px;
     border-radius: 12px;
     background-color: #000000;
-    justify-content: center; /* centraliza checkbox */
+    width: fit-content;
+    margin-bottom: 25px;
+}
+
+/* Checkbox */
+.recaptcha-wrapper input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #00CC66;
+    cursor: pointer;
 }
 
 /* Botão de confirmação */
@@ -356,35 +428,18 @@ body {
     border-radius: 5px;
     background-color: #000000;
     color: #00CC66;
-    padding: 14px 30px;
+    padding: 12px 25px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: none; /* sem brilho */
+    box-shadow: none;
+    width: auto;
+    display: inline-block;
 }
 
 .contact-btn:hover {
     background-color: #00CC66;
     color: #000;
     transform: translateY(-2px);
-    box-shadow: none; /* sem brilho no hover */
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-    .contact-wrapper {
-        padding: 25px 20px;
-    }
-    .contact-form > * {
-        margin-bottom: 18px;
-    }
-    .recaptcha-wrapper {
-        flex-direction: column;
-        align-items: center; /* mantém recaptcha centralizado */
-        gap: 10px;
-    }
-    .contact-btn {
-        width: auto;
-        text-align: center;
-    }
+    box-shadow: none;
 }
