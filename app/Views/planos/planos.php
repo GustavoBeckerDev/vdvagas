@@ -1,4 +1,4 @@
-<h1>VIEW DE PLANOS</h1>
+
 
 <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/footer.css">
 <main class="planos">

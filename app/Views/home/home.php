@@ -25,7 +25,7 @@
             </p>
             <div class="hero-buttons">
                 <a href="#" class="btn btn-green">Experimente Grátis</a>
-                <a href="#" class="btn btn-yellow">Nossos Planos</a>
+                <a href="<?= $baseUrl ?>/planos" class="btn btn-yellow">Nossos Planos</a>
             </div>
         </div>
         <div class="hero-image">
