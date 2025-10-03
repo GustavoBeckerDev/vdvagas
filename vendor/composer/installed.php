@@ -3,7 +3,7 @@
         'name' => 'teaching/mvc',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'fc5e38e8285d1f4a43df7ef215bc23ba8747a4ca',
+        'reference' => '7fd14487ab4a864daa9ea27b23a6964df7fbcd93',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'teaching/mvc' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'fc5e38e8285d1f4a43df7ef215bc23ba8747a4ca',
+            'reference' => '7fd14487ab4a864daa9ea27b23a6964df7fbcd93',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

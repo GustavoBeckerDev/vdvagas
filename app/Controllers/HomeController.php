@@ -20,6 +20,8 @@ class HomeController extends Controller
         ];
 
         $this->view('layouts/header', $dataheader);
+        $this->view('modal/modalCadastro');
+        $this->view('modal/modalLogin', $data);
         $this->view('home/home', $data);
         $this->view('layouts/footer', $data);
     }

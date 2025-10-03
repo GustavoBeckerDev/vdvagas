@@ -1,0 +1,201 @@
+/* --- GERAL --- */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* HERO */
+.vagas-hero {
+    padding: 60px 40px 20px 40px;
+    text-align: center;
+}
+
+.vagas-hero-text h1 {
+    font-size: 2.5rem;
+    color: #00CC66;
+    margin-bottom: 20px;
+}
+
+.vagas-hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* FILTROS */
+.vagas-filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 40px auto 50px auto;
+    max-width: 800px;
+}
+
+.barra-pesquisa {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.barra-pesquisa input {
+    width: 70%;
+    max-width: 600px;
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #00CC66;
+    background: #111;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+}
+
+.filtros {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.filtros select {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #00CC66;
+    background: #111;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* GRID DE VAGAS */
+.vagas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0 60px 60px 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .vagas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 40px 60px 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .vagas-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px 40px 20px;
+    }
+}
+
+/* CARD */
+.vaga-card {
+    background: #111;
+    border: 1px solid #00CC66;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vaga-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 204, 102, 0.5);
+}
+
+.vaga-icone {
+    font-size: 2rem;
+    color: #00CC66;
+    margin-bottom: 10px;
+}
+
+.vaga-card h3 {
+    color: #00CC66;
+    margin-bottom: 10px;
+}
+
+.vaga-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #ccc;
+}
+
+/* BLOCO VIP */
+.vaga-vip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    margin: 60px auto;
+    padding: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.vip-texto {
+    flex: 1;
+}
+
+.vip-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.vip-texto p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.vip-img img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* BOTÃO VER MAIS */
+.see-more {
+    text-align: center;
+    margin: 40px 0 80px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-green {
+    background: #00CC66;
+    color: #000;
+    border: none;
+}
+
+.btn-green:hover {
+    background: #009944;
+}
+
+/* LOADER */
+.loader {
+    text-align: center;
+    color: #00CC66;
+    font-size: 1.2rem;
+    margin: 40px 0;
+}

@@ -8,10 +8,10 @@ define('CONTROLLER_FOLDER','app/Controllers'.DIRECTORY_SEPARATOR);
 define('BASE_PATH','/vdvagas');
 
 // defines para o banco de dados
-define('HOST','172.17.0.2');
-define('DB_NAME','projeto');
+define('HOST','127.0.0.1');
+define('DB_NAME','vd_vagas');
 define('USERNAME','root');
-define('PASSWORD','secret-pw');
+define('PASSWORD','');
 $_ENV['APP_ENV']='development';
 
 
