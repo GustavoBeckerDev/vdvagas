@@ -29,5 +29,3 @@
             </div>
         </div>
     </section>
-
-<link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/footer.css">

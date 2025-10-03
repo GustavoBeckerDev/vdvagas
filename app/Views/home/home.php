@@ -105,7 +105,7 @@
                 <input type="email" id="email" name="email" placeholder="Seu email" required>
 
                 <label for="company">Nome da Empresa (Opcional)</label>
-                <input type="text" id="company" name="company" placeholder="Company name">
+                <input type="text" id="company" name="company" placeholder="Sua empresa">
 
                 <label for="message">Mensagem</label>
                 <textarea id="message" name="message" placeholder="Escreva sua mensagem aqui..." required></textarea>
