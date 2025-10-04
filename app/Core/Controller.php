@@ -36,6 +36,12 @@ abstract class Controller
             // Ex: $data['produtos'] se torna a variável $produtos na view
             extract($data);
 
+            // Garantir que $baseUrl esteja sempre disponível nas views.
+            // Alguns controllers não passam essa variável; usar BASE_PATH (se definido) ou string vazia.
+            if (!isset($baseUrl)) {
+                $baseUrl = defined('BASE_PATH') ? BASE_PATH : '';
+            }
+
             // Inicia o buffer de saída para incluir o layout
             ob_start();
             require_once $viewFile;
