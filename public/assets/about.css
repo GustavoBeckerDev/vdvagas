@@ -6,6 +6,29 @@
     color: #fff;
 }
 
+/* Título da seção Sobre Nós */
+.about-title {
+    position: relative;
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #00CC66;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.about-title::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00CC66, transparent);
+}
+
 /* Faixa verde com gradiente */
 .about-banner-bg {
     position: relative;
@@ -32,7 +55,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    background-color: #111;
+    background-color: #000000;
     padding: 60px;
     border-radius: 20px;
     max-width: 1000px;
@@ -65,14 +88,14 @@
 }
 
 .social-icons a {
-    color: #00CC66;
+    color: #000000;
     font-size: 1.5rem;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .social-icons a:hover {
-    color: #009944;
+    color: #000000;
 }
 
 /* RESPONSIVIDADE SOBRE */
@@ -81,9 +104,11 @@
         flex-direction: column;
         text-align: center;
     }
+
     .about-right-text {
         text-align: center;
     }
+
     .about-image img {
         margin-bottom: 20px;
     }
@@ -92,5 +117,151 @@
 @media (max-width: 600px) {
     .about-banner-bg {
         padding: 60px 10px;
+    }
+}
+
+/* --- NOSSA EQUIPE --- */
+.team-section {
+    padding: 80px 20px;
+    background: #000;
+}
+
+/* Header: título | divisor | subtítulo+texto */
+.team-section-header {
+    display: flex;
+    align-items: center;        /* centraliza verticalmente */
+    justify-content: center;    /* centraliza horizontalmente */
+    gap: 50px;                  /* espaço entre colunas */
+    margin: 0 auto 60px auto;   /* centraliza com margin auto */
+    max-width: 900px;           /* largura máxima para alinhar */
+}
+
+/* Título à esquerda */
+.team-title {
+    flex: 1;                    
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00CC66;
+    margin: 0;
+    text-align: right;          
+    white-space: nowrap;
+}
+
+/* Linha vertical */
+.team-divider {
+    width: 3px;
+    height: 100px; 
+    background: linear-gradient(to bottom, transparent, #00CC66, transparent);
+    border-radius: 2px;
+}
+
+/* Bloco da direita */
+.team-right {
+    flex: 1;                    
+    max-width: 500px;
+    text-align: left;           
+}
+
+.team-subtitle {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+.team-text {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Grid dos membros */
+.team {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Card de cada membro */
+.team-card {
+    background: #000000;
+    border: 2px solid #00CC66;
+    border-radius: 15px;
+    padding: 25px;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(0, 204, 102, 0.6);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #00CC66;
+}
+
+.team-card h3 {
+    font-size: 1.2rem;
+    color: #00CC66;
+    margin-bottom: 10px;
+}
+
+/* Texto normal dos parágrafos */
+.team-card p {
+    font-size: 0.9rem;
+    color: #ddd;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+/* Labels */
+.team-card p strong {
+    display: block;          /* cada label numa linha própria */
+    color: #00CC66;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+/* Espaçamento extra entre Função e Principais habilidades */
+.team-card p:nth-of-type(2) {
+    margin-top: 30px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+    .team-section-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* linha vira horizontal */
+    .team-divider {
+        width: 50%;
+        height: 3px;
+        margin: 20px 0;
+        background: linear-gradient(to right, transparent, #00CC66, transparent);
+    }
+
+    .team-title,
+    .team-right {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-card {
+        width: 90%;
     }
 }

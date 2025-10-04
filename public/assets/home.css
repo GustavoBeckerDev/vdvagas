@@ -169,7 +169,7 @@ body {
 
 /* CARD DE VAGA */
 .job-card {
-    background: #111;
+    background: #000000;
     border: 1px solid #00CC66;
     border-radius: 12px;
     padding: 30px;
@@ -243,7 +243,7 @@ body {
 /* Faixa verde com gradiente */
 .about-banner-bg {
     position: relative;
-    background: linear-gradient(to right, #000, #00CC66 50%, #000);
+    background: linear-gradient(to right, transparent, #00CC66 50%, transparent);
     padding: 60px 20px;
     display: flex;
     flex-direction: column;
@@ -266,7 +266,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    background-color: #111;
+    background-color: #000000;
     padding: 60px;
     border-radius: 20px;
     max-width: 1000px;
