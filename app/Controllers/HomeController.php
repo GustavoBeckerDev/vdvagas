@@ -8,21 +8,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $baseUrl = '/vdvagas';
-
         $dataheader = [
-            'title' => 'VD Vagas',
-            'baseUrl' => $baseUrl
-        ];
-
-        $data = [
-            'baseUrl' => $baseUrl
+            'title' => 'VD Vagas'
         ];
 
         $this->view('layouts/header', $dataheader);
-        $this->view('modal/modalCadastro');
-        $this->view('modal/modalLogin', $data);
-        $this->view('home/home', $data);
-        $this->view('layouts/footer', $data);
+        $this->view('home/home');
+        $this->view('layouts/footer');
     }
 }

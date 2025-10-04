@@ -1,0 +1,257 @@
+/* Fundo escurecido */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    z-index: 999;
+}
+
+/* Estrutura geral do modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: #000;
+    border: 3px solid #00CC66;
+    border-radius: 20px;
+    padding: 28px 26px;
+    z-index: 1000;
+    display: none;
+    transition: all 0.22s ease;
+    color: #fff;
+    width: 360px;
+    max-width: 94%;
+}
+
+/* Animação ao abrir */
+.modal.active {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Ajustes para ativar o fundo opaco */
+.modal-overlay.active {
+    display: block;
+}
+
+/* Botão de fechar modal */
+.modal-close {
+    background: transparent;
+    border: none;
+    color: #00CC66;
+    font-size: 1.8rem;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #00994d;
+}
+
+/* ==========================
+   Login-specific styles (migrated from modalLogin.css)
+   ========================== */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+    --green:#00cc66;
+    --bg:#000;
+    --panel-bg:#000;
+    --text:#e6e6e6;
+    --muted:#9a9a9a;
+    --radius:18px;
+    --font-stack: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+@font-face{font-family:Montserrat; src: url('../fontes/Montserrat/static/Montserrat-VariableFont_wght.ttf') format('truetype');}
+
+.login-inner{
+    width:360px;
+    max-width:92vw;
+    color:var(--text);
+    font-family:var(--font-stack);
+}
+
+.login-inner .titulo{
+    font-size:28px;
+    color:var(--green);
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.login-inner .conteudo{
+    color:var(--muted);
+    margin-bottom:18px;
+    font-size:14px;
+}
+
+.login-form{display:flex;flex-direction:column;gap:14px}
+
+.login-form label{display:block;font-size:13px;color:var(--text);margin-bottom:6px}
+
+.input-with-icon{
+    display:flex;align-items:center;gap:10px;background:transparent;border:2px solid var(--green);padding:12px;border-radius:8px;color:var(--text)
+}
+
+.input-with-icon .icon{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--green);font-size:18px;margin-left:2px}
+
+.input-with-icon input{
+    background:transparent;border:0;outline:none;color:var(--text);flex:1;font-size:14px;padding:4px 6px
+}
+
+.input-with-icon .toggle-password{background:transparent;border:0;color:var(--green);cursor:pointer;font-size:18px}
+
+.forgot a{color:var(--green);text-decoration:none;font-size:13px}
+
+.btn-primary{
+    display:block;width:100%;padding:12px 18px;border-radius:8px;border:2px solid var(--green);background:transparent;color:var(--text);font-weight:700;cursor:pointer;text-align:center
+}
+
+.remember{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
+
+.remember input[type="checkbox"]{appearance:none;width:34px;height:18px;border-radius:20px;background:#072;display:inline-block;position:relative;border:2px solid rgba(0,0,0,0.2)}
+.remember input[type="checkbox"]:checked{background:var(--green)}
+
+.cadastrar{margin-top:8px;text-align:center}
+.cadastrar button{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:6px 10px;border-radius:6px;color:var(--text);cursor:pointer}
+
+/* Ensure the modal-content area is spaced nicely */
+.modal .modal-content{padding:34px 30px 36px}
+
+/* Responsive tweaks */
+@media (max-width:420px){.login-inner{width:92vw}.modal{padding:20px}}
+
+/* Estilos para o modal de login */
+#modalLogin {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #00cc66;
+    border: 2px solid #00cc66;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#modalLogin h2,
+#modalLogin p,
+#modalLogin label {
+    text-align: left;
+}
+
+#modalLogin .form-group label {
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#modalLogin .modal-content {
+    text-align: center;
+}
+
+#modalLogin h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #00cc66;
+}
+
+#modalLogin p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #00cc66; /* Corrigindo cor verde */
+}
+
+#modalLogin .form-group {
+    margin-bottom: 15px;
+}
+
+#modalLogin .input-icon {
+    position: relative;
+}
+
+#modalLogin .input-icon input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #00cc66;
+    border-radius: 5px;
+    background-color: #000;
+    color: #00cc66;
+}
+
+#modalLogin .input-icon .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+#modalLogin .forgot-password {
+    display: block;
+    font-size: 12px;
+    color: #00cc66;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+#modalLogin .login-button {
+    background-color: #00cc66;
+    color: #000;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#modalLogin .login-button:hover {
+    background-color: #00994d;
+}
+
+#modalLogin .remember-me {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#modalLogin .remember-me input {
+    margin-right: 5px;
+}
+
+#modalLogin .divider {
+    margin: 20px 0;
+    border-top: 1px solid #00cc66;
+}
+
+#modalLogin .signup-link {
+    font-size: 12px;
+    color: #00CC66;
+}
+
+#modalLogin .signup-link a {
+    color: #00cc66;
+    text-decoration: none;
+}
+
+/* Estilo para o fundo opaco quando o modal estiver aberto */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+/* Fim dos ajustes adicionais no modal de login */

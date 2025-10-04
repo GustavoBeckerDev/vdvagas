@@ -81,7 +81,7 @@ class VagasController extends Controller
         else{
           $CadVagasModel-> create($data);
         }
-        $this->redirect(url_to('/'));
+    $this->redirect('/');
     }
     public function editar($id)
     {
@@ -97,11 +97,11 @@ class VagasController extends Controller
         if($CadVagasModel->delete($id))
         {
             echo "Excluído com sucesso!";
-            $this->redirect(url_to('/vagas'));        
+            $this->redirect('/vagas');
         }
         else
         {
-            $this->redirect(url_to('/vagas'));        
+            $this->redirect('/vagas');
         }
     }
 }
