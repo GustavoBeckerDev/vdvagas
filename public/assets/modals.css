@@ -56,8 +56,8 @@
 }
 
 /* ==========================
-   Login-specific styles (migrated from modalLogin.css)
-   ========================== */
+    Estilos específicos do login (migrado de modalLogin.css)
+    ========================== */
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
     --green:#00cc66;
@@ -95,14 +95,49 @@
 
 .login-form label{display:block;font-size:13px;color:var(--text);margin-bottom:6px}
 
-.input-with-icon{
-    display:flex;align-items:center;gap:10px;background:transparent;border:2px solid var(--green);padding:12px;border-radius:8px;color:var(--text)
+/* Icon visuals for inputs inside modal */
+.input-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
-.input-with-icon .icon{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--green);font-size:18px;margin-left:2px}
+.input-icon input {
+    width: 100%;
+    padding: 12px 48px 12px 44px; /* espaço para ícone à direita e à esquerda */
+    background: transparent;
+    border: 2px solid var(--green);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
 
-.input-with-icon input{
-    background:transparent;border:0;outline:none;color:var(--text);flex:1;font-size:14px;padding:4px 6px
+.input-icon-left {
+    position: absolute;
+    left: 12px;
+    color: var(--green);
+    font-size: 18px;
+    pointer-events: none; /* não captura clique */
+}
+
+.input-icon-right {
+    position: absolute;
+    right: 12px;
+    color: var(--green);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.input-icon-right:hover {
+    color: #00b95a;
+}
+
+.input-icon input:focus {
+    border-color: #00cc66;
+    box-shadow: 0 0 0 4px rgba(0, 204, 102, 0.06);
 }
 
 .input-with-icon .toggle-password{background:transparent;border:0;color:var(--green);cursor:pointer;font-size:18px}
@@ -113,10 +148,7 @@
     display:block;width:100%;padding:12px 18px;border-radius:8px;border:2px solid var(--green);background:transparent;color:var(--text);font-weight:700;cursor:pointer;text-align:center
 }
 
-.remember{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}
-
-.remember input[type="checkbox"]{appearance:none;width:34px;height:18px;border-radius:20px;background:#072;display:inline-block;position:relative;border:2px solid rgba(0,0,0,0.2)}
-.remember input[type="checkbox"]:checked{background:var(--green)}
+.rem-remove-placeholder{ display:block; }
 
 .cadastrar{margin-top:8px;text-align:center}
 .cadastrar button{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:6px 10px;border-radius:6px;color:var(--text);cursor:pointer}
@@ -151,12 +183,12 @@
 
 #modalLogin .form-group label {
     text-align: left;
-    display: block;
+    color: #00cc66; /* labels do login em verde */
     margin-bottom: 5px;
 }
 
 #modalLogin .modal-content {
-    text-align: center;
+    color: #ffffff; /* alterado para branco conforme solicitado */
 }
 
 #modalLogin h2 {
@@ -168,7 +200,7 @@
 #modalLogin p {
     font-size: 14px;
     margin-bottom: 20px;
-    color: #00cc66; /* Corrigindo cor verde */
+    color: #ffffff; /* parágrafo do login em branco */
 }
 
 #modalLogin .form-group {
@@ -181,7 +213,8 @@
 
 #modalLogin .input-icon input {
     width: 100%;
-    padding: 10px;
+    /* espaço à esquerda para o ícone e à direita para o ícone de olho */
+    padding: 10px 44px 10px 44px;
     border: 1px solid #00cc66;
     border-radius: 5px;
     background-color: #000;
@@ -199,9 +232,10 @@
 #modalLogin .forgot-password {
     display: block;
     font-size: 12px;
-    color: #00cc66;
+    color: #00cc66; /* link permanece verde */
     text-decoration: none;
     margin-top: 5px;
+    text-align: right; /* alinhado à direita conforme solicitado */
 }
 
 #modalLogin .login-button {
@@ -212,36 +246,220 @@
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
+    margin-bottom: 12px; /* espaço abaixo do botão Log in solicitado */
 }
 
 #modalLogin .login-button:hover {
     background-color: #00994d;
 }
 
-#modalLogin .remember-me {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
 
-#modalLogin .remember-me input {
-    margin-right: 5px;
-}
 
 #modalLogin .divider {
     margin: 20px 0;
     border-top: 1px solid #00cc66;
 }
 
+/* alinhamento do texto de cadastro no modal de login */
 #modalLogin .signup-link {
     font-size: 12px;
-    color: #00CC66;
+    color: #ffffff; /* texto principal em branco */
+    text-align: right;
 }
 
 #modalLogin .signup-link a {
     color: #00cc66;
     text-decoration: none;
+}
+
+/* Copiar estilos do modal de login para o modal de cadastro */
+#modalSignup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #00cc66;
+    border: 2px solid #00cc66;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#modalSignup h2,
+#modalSignup p,
+#modalSignup label {
+    text-align: left;
+}
+
+#modalSignup .form-group label {
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#modalSignup .modal-content {
+    text-align: center;
+}
+
+#modalSignup h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #00cc66;
+}
+
+#modalSignup p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #ffffff; /* texto introdutório em branco conforme solicitado */
+}
+
+#modalSignup .form-group {
+    margin-bottom: 15px;
+}
+
+#modalSignup .input-icon {
+    position: relative;
+}
+
+#modalSignup .input-icon input {
+    width: 100%;
+    /* espaço à esquerda para o ícone e à direita para o ícone de olho */
+    padding: 10px 44px 10px 44px;
+    border: 1px solid #00cc66;
+    border-radius: 5px;
+    background-color: #000;
+    color: #00cc66;
+}
+
+#modalSignup .input-icon .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+#modalSignup .forgot-password {
+    display: block;
+    font-size: 12px;
+    color: #00cc66;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+#modalSignup .login-button {
+    background-color: #00cc66;
+    color: #000;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 12px; /* Espaço abaixo do botão Criar Conta */
+}
+
+#modalSignup .login-button:hover {
+    background-color: #00994d;
+}
+
+
+
+#modalSignup .divider {
+    margin: 20px 0;
+    border-top: 1px solid #00cc66;
+}
+
+#modalSignup .signup-link {
+    font-size: 12px;
+    color: #ffffff; /* texto principal em branco */
+    text-align: right;
+    display: block;
+}
+
+#modalSignup .signup-link a {
+    color: #00cc66;
+    text-decoration: underline; /* Sublinha o link 'Faça login' */
+}
+
+/* Estilos para os checkboxes do signup */
+#modalSignup .signup-type{
+    display:flex;
+    gap:16px;
+    margin:10px 0 14px 0;
+    justify-content:flex-start;
+}
+
+#modalSignup .signup-type-item{    
+    font-size:14px;
+    color:var(--text);
+}
+
+#modalSignup .signup-type-item input{    
+    margin-right:6px;
+}
+
+/* Radios do signup: visualizar em verde e melhorar tamanho/alcance */
+#modalSignup .signup-type-item input[type="radio"]{
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+    accent-color: var(--green); /* browsers que suportam */
+    appearance: radio;
+    -webkit-appearance: radio; /* fallback */
+}
+
+/* Forçar o label do item do signup a usar a cor verde definida */
+#modalSignup .signup-type-item{
+    color: var(--green);
+}
+
+/* Forçar cor verde nos inputs e textos dentro dos modais */
+#modalLogin, #modalSignup, .login-inner {
+    color: var(--green);
+}
+
+/* Inputs, textareas e selects dentro dos modais devem usar verde e borda verde */
+#modalLogin input,
+#modalLogin textarea,
+#modalLogin select,
+#modalSignup input,
+#modalSignup textarea,
+#modalSignup select,
+.login-inner input,
+.login-inner textarea,
+.login-inner select {
+    color: var(--green);
+    border-color: var(--green);
+}
+
+/* Placeholder com leve opacidade para legibilidade */
+#modalLogin input::placeholder,
+#modalLogin textarea::placeholder,
+#modalSignup input::placeholder,
+#modalSignup textarea::placeholder,
+.login-inner input::placeholder,
+.login-inner textarea::placeholder {
+    color: rgba(0, 204, 102, 0.6);
+}
+
+/* Textos menores e rótulos também em verde para consistência */
+#modalLogin label,
+#modalSignup label,
+.login-inner .conteudo,
+.signup-type-item,
+.remember {
+    color: var(--green);
+}
+
+/* Links dentro dos modais */
+#modalLogin a,
+#modalSignup a,
+.login-inner a {
+    color: var(--green);
 }
 
 /* Estilo para o fundo opaco quando o modal estiver aberto */

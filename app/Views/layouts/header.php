@@ -21,6 +21,8 @@ $logoPath = $baseUrl . "/public/imagens/logo.png";
     <link rel="stylesheet" href="<?= $baseUrl ?>../public/assets/about.css">
     <!-- CSS dos Modais (inclui estilos específicos do login) -->
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/modals.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
