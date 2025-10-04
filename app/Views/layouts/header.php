@@ -13,7 +13,7 @@ $logoPath = $baseUrl . "/public/imagens/logo.png";
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/home.css">
     <!-- CSS de Planos (ou páginas específicas) -->
     <link rel="stylesheet" href="<?= $baseUrl ?>../public/assets/planos.css">
-     <!-- CSS de About (ou páginas específicas) -->
+    <!-- CSS de About (ou páginas específicas) -->
     <link rel="stylesheet" href="<?= $baseUrl ?>../public/assets/about.css">
     
 <body>

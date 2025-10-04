@@ -1,0 +1,147 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px 100px 40px;
+    /* espaço inferior para a linha */
+    flex-wrap: wrap;
+    gap: 100px;
+    position: relative;
+    /* necessário para a linha ::after */
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: #00CC66;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-image img {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* RESPONSIVIDADE HERO */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+}
+
+/* Barrinha exclusiva só no título Contato */
+.contact-title::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #00CC66, transparent);
+}
+
+/* Caixa preta do formulário */
+.contact-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    border: 2px solid #00CC66;
+    border-radius: 25px;
+    background-color: #000;
+    text-align: left;
+}
+
+/* Formulário */
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #00CC66;
+    font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 10px;
+    border: 1px solid #00CC66;
+    background: #000;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+/* inputs ocupam 100%, mas o botão NÃO */
+.contact-form>*:not(.contact-btn) {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* Caixa reCAPTCHA/checkbox */
+.recaptcha-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid #00CC66;
+    padding: 12px 15px;
+    border-radius: 12px;
+    background-color: #000000;
+    width: fit-content;
+    margin-bottom: 25px;
+}
+
+/* Checkbox */
+.recaptcha-wrapper input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #00CC66;
+    cursor: pointer;
+}
+
+/* Botão de confirmação */
+.contact-btn {
+    border: 2px solid #00CC66;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #00CC66;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: none;
+    width: auto;
+    display: inline-block;
+}
+
+.contact-btn:hover {
+    background-color: #00CC66;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: none;
+}
