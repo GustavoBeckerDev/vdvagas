@@ -21,16 +21,13 @@
                     com o objetivo de desenvolver uma plataforma voltada para oportunidades de trabalho.
                 </p>
                 <p>
-                    Nosso site nasceu da necessidade de criar um espaço que conecte empresas e profissionais, 
-                    oferecendo praticidade, transparência e eficiência no processo de divulgação e busca por vagas.
+                    Nosso site nasceu da necessidade de criar um espaço que conecte empresas e profissionais, oferecendo praticidade, transparência e eficiência no processo de divulgação e busca por vagas.
                 </p>
                 <p>
-                    Mais do que cumprir um desafio acadêmico, buscamos aplicar de forma prática os conhecimentos 
-                    adquiridos em sala de aula, entregando uma solução que gera valor para a comunidade local e regional.
+                    Mais do que cumprir um desafio acadêmico, buscamos aplicar de forma prática os conhecimentos adquiridos em sala de aula, entregando uma solução que gera valor para a comunidade local e regional.
                 </p>
                 <p>
-                    Acreditamos que iniciativas como esta podem abrir portas, aproximar talentos de empregadores 
-                    e contribuir para o desenvolvimento profissional de muitas pessoas.
+                    Acreditamos que iniciativas como esta podem abrir portas, aproximar talentos de empregadores e contribuir para o desenvolvimento profissional de muitas pessoas.
                 </p>
 
                 <!-- Redes sociais -->
@@ -69,35 +66,35 @@
         <div class="team-card">
             <img src="<?= $baseUrl ?>/public/imagens/zack.png" alt="Zack Zayyr Gomes da Silva">
             <h3>Zack Zayyr Gomes da Silva</h3>
-            <p><strong>Função:</strong> Agregar com novas ideias</p>
+            <p><strong>Função:</strong> Back end e agregação com novas ideias</p>
             <p><strong>Principais habilidades:</strong> Organização e otimização de código</p>
         </div>
 
         <div class="team-card">
             <img src="<?= $baseUrl ?>/public/imagens/waldair.png" alt="Waldair Otto">
             <h3>Waldair Otto</h3>
-            <p><strong>Função:</strong> Slides</p>
+            <p><strong>Função:</strong> Front end e slides</p>
             <p><strong>Principais habilidades:</strong> Mago dos Slides</p>
         </div>
 
         <div class="team-card">
             <img src="<?= $baseUrl ?>/public/imagens/gustavo.png" alt="Gustavo Becker">
             <h3>Gustavo Becker</h3>
-            <p><strong>Função:</strong> Apresentar</p>
-            <p><strong>Principais habilidades:</strong> Agregar com ideias e bom diálogo</p>
+            <p><strong>Função:</strong> Monitorar e apresentar</p>
+            <p><strong>Principais habilidades:</strong> Agregar com ideias e bom diálogo, Mago do Git</p>
         </div>
 
         <div class="team-card">
             <img src="<?= $baseUrl ?>/public/imagens/leticia.png" alt="Letícia Stédile Maidana">
             <h3>Letícia Stédile Maidana</h3>
-            <p><strong>Função:</strong> Fornecer e organizar a documentação</p>
+            <p><strong>Função:</strong> Front end, fornecer e organizar a documentação</p>
             <p><strong>Principais habilidades:</strong> Maga do Miro</p>
         </div>
 
         <div class="team-card">
             <img src="<?= $baseUrl ?>/public/imagens/leandro.png" alt="Leandro Fossatti">
             <h3>Leandro Fossatti</h3>
-            <p><strong>Função:</strong> Pontuar e refletir sobre novas ideias</p>
+            <p><strong>Função:</strong> Banco de Dados, pontuar e refletir sobre novas ideias</p>
             <p><strong>Principais habilidades:</strong> Possui grande experiência sobre tudo</p>
         </div>
     </div>
