@@ -81,7 +81,7 @@
             <img src="<?= $baseUrl ?>/public/imagens/gustavo.png" alt="Gustavo Becker">
             <h3>Gustavo Becker</h3>
             <p><strong>Função:</strong> Monitorar e apresentar</p>
-            <p><strong>Principais habilidades:</strong> Agregar com ideias e bom diálogo, Mago do Git</p>
+            <p><strong>Principais habilidades:</strong> Mago do Git, faz de tudo um pouco </p>
         </div>
 
         <div class="team-card">
