@@ -1,141 +1,106 @@
-<main class="vagas">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas | VD Vagas</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="/vdvagas/public/assets/vagas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+<main class="vagas">
 
     <!-- HERO -->
     <section class="vagas-hero">
         <div class="vagas-hero-text">
-            <h1>Encontre a vaga perfeita para você</h1>
-            <p>Busque por oportunidades filtrando por localidade, área de interesse e tipo de contrato.</p>
+            <h1>🚀 Encontre a vaga perfeita para você</h1>
+            <p>
+                Explore oportunidades incríveis e descubra o trabalho que combina com o seu talento.  
+                Filtre por localidade, área e tipo de contrato para uma experiência personalizada.
+            </p>
         </div>
     </section>
 
     <!-- FILTROS -->
     <section class="vagas-filtros">
         <div class="barra-pesquisa">
-            <input type="text" placeholder="Pesquisar...">
+            <input type="text" placeholder="🔍 Pesquise uma vaga ou cargo...">
         </div>
         <div class="filtros">
             <select>
-                <option>Localização</option>
+                <option>📍 Localização</option>
             </select>
             <select>
-                <option>Faixa salarial</option>
+                <option>💰 Faixa salarial</option>
             </select>
             <select>
-                <option>Tipo de vaga</option>
+                <option>🕒 Tipo de vaga</option>
             </select>
         </div>
     </section>
 
-    <!-- CONTAINER PRINCIPAL -->
-    <div id="vagas-container">
-        <?php
-        // 🔹 MOCK DE VAGAS (futuro: buscar do banco)
-        /* $stmt = $pdo->query("SELECT titulo, descricao FROM vagas ORDER BY created_at DESC");
-$vagas = $stmt->fetchAll(PDO::FETCH_ASSOC); */
+    <!-- LISTA DE VAGAS -->
+    <section class="vagas-grid">
+        <div class="vaga-card">
+            <div class="vaga-icone"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Desenvolvedor Front-end</h3>
+            <p>Atue na criação de interfaces modernas e responsivas. Experiência com HTML, CSS e JavaScript.</p>
+            <a href="#" class="btn btn-green">Candidatar-se</a>
+        </div>
 
-        $vagas = [];
-        for ($i = 1; $i <= 50; $i++) {
-            $vagas[] = [
-                'titulo' => "Vaga Exemplo $i",
-                'descricao' => "Descrição resumida da vaga número $i. Inclua aqui os principais requisitos."
-            ];
-        }
+        <div class="vaga-card">
+            <div class="vaga-icone"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Desenvolvedor Back-end</h3>
+            <p>Responsável pela lógica e estrutura do sistema. Conhecimento em PHP, MySQL e APIs REST.</p>
+            <a href="#" class="btn btn-green">Candidatar-se</a>
+        </div>
 
-        // 🔹 Primeira carga: 9 vagas + 1 VIP
-        $primeiroBloco = array_slice($vagas, 0, 9);
-        echo '<section class="vagas-grid">';
-        foreach ($primeiroBloco as $vaga) {
-            echo '<div class="vaga-card">';
-            echo '<div class="vaga-icone">🔒</div>';
-            echo '<h3>' . $vaga['titulo'] . '</h3>';
-            echo '<p>' . $vaga['descricao'] . '</p>';
-            echo '</div>';
-        }
-        echo '</section>';
+        <div class="vaga-card">
+            <div class="vaga-icone"><i class="fa-solid fa-headset"></i></div>
+            <h3>Atendente de Suporte</h3>
+            <p>Atendimento aos clientes via chat e e-mail. Boa comunicação e empatia são essenciais.</p>
+            <a href="#" class="btn btn-green">Candidatar-se</a>
+        </div>
 
-        echo '
-        <section class="vaga-vip">
-            <div class="vip-texto">
-                <h2>Vaga VIP</h2>
-                <p>Conteúdo exclusivo para assinantes premium.</p>
-            </div>
-            <div class="vip-img">
-                <img src="/vdvagas/public/imagens/vip.png" alt="Vaga VIP">
-            </div>
-        </section>
-        ';
-        ?>
-    </div>
+        <div class="vaga-card">
+            <div class="vaga-icone"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Analista de Marketing</h3>
+            <p>Criação de campanhas digitais e análise de métricas para crescimento de marca e vendas.</p>
+            <a href="#" class="btn btn-green">Candidatar-se</a>
+        </div>
 
-    <!-- LOADER -->
-    <div id="loader" class="loader" style="display: none;">Carregando mais vagas...</div>
+        <div class="vaga-card">
+            <div class="vaga-icone"><i class="fa-solid fa-palette"></i></div>
+            <h3>Designer Gráfico</h3>
+            <p>Crie identidades visuais e materiais gráficos para empresas e campanhas digitais.</p>
+            <a href="#" class="btn btn-green">Candidatar-se</a>
+        </div>
 
-    <link rel="stylesheet" href="/vdvagas/public/assets/footer.css">
+        <div class="vaga-card">
+            <div class="vaga-icone"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Consultor Comercial</h3>
+            <p>Prospecção de novos clientes e manutenção de parcerias. Boa oratória e foco em resultados.</p>
+            <a href="#" class="btn btn-green">Candidatar-se</a>
+        </div>
+    </section>
 
-    <!-- SCRIPT PARA SCROLL INFINITO -->
-    <script>
-        const vagas = <?php echo json_encode($vagas); ?>; // mock / futuro banco
-        let offset = 9; // já mostramos 9
-        const container = document.getElementById('vagas-container');
-        const loader = document.getElementById('loader');
-        let loading = false;
+    <!-- VAGA VIP -->
+    <section class="vaga-vip">
+        <div class="vip-texto">
+            <h2><i class="fa-solid fa-crown"></i> Vaga VIP</h2>
+            <p>Conteúdo exclusivo para assinantes premium. Destaque sua candidatura e tenha acesso antecipado às melhores oportunidades!</p>
+            <a href="#" class="btn btn-green">Seja Premium</a>
+        </div>
+        <div class="vip-img">
+            <img src="/vdvagas/public/imagens/logo.png" alt="Vaga VIP">
+        </div>
+    </section>
 
-        function loadMore() {
-            if (loading) return;
-            loading = true;
-            loader.style.display = "block";
-
-            setTimeout(() => { // simula carregamento assíncrono
-                const nextVagas = vagas.slice(offset, offset + 9);
-                if (nextVagas.length === 0) {
-                    loader.innerText = "Não há mais vagas.";
-                    return;
-                }
-
-                // adiciona 9 vagas
-                const grid = document.createElement('section');
-                grid.classList.add('vagas-grid');
-                nextVagas.forEach(vaga => {
-                    const card = document.createElement('div');
-                    card.classList.add('vaga-card');
-                    card.innerHTML = `
-                        <div class="vaga-icone">🔒</div>
-                        <h3>${vaga.titulo}</h3>
-                        <p>${vaga.descricao}</p>
-                    `;
-                    grid.appendChild(card);
-                });
-                container.appendChild(grid);
-
-                // adiciona 1 vaga VIP
-                const vip = document.createElement('section');
-                vip.classList.add('vaga-vip');
-                vip.innerHTML = `
-                    <div class="vip-texto">
-                        <h2>Vaga VIP</h2>
-                        <p>Conteúdo exclusivo para assinantes premium.</p>
-                    </div>
-                    <div class="vip-img">
-                        <img src="/vdvagas/public/imagens/vip.png" alt="Vaga VIP">
-                    </div>
-                `;
-                container.appendChild(vip);
-
-                offset += 9;
-                loader.style.display = "none";
-                loading = false;
-            }, 800); // delay para simular carregamento
-        }
-
-        // Scroll infinito
-        window.addEventListener('scroll', () => {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
-                loadMore();
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/footer.css">
 
 </main>
+
+</body>
+</html>

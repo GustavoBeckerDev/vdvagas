@@ -1,55 +1,60 @@
-/* --- GERAL --- */
+/* --- BASE GERAL --- */
 body {
     background-color: #000;
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: "Sansation", sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* HERO */
+/* --- HERO --- */
 .vagas-hero {
-    padding: 60px 40px 20px 40px;
+    padding: 80px 40px 40px 40px;
     text-align: center;
+    background: linear-gradient(to bottom, #001a0e, #000);
+    border-bottom: 2px solid #00CC66;
 }
 
 .vagas-hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #00CC66;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .vagas-hero-text p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-/* FILTROS */
+/* --- FILTROS --- */
 .vagas-filtros {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin: 40px auto 50px auto;
-    max-width: 800px;
-}
-
-.barra-pesquisa {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 50px auto 70px auto;
+    max-width: 900px;
 }
 
 .barra-pesquisa input {
-    width: 70%;
+    width: 80%;
     max-width: 600px;
-    padding: 14px;
-    border-radius: 6px;
-    border: 1px solid #00CC66;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 2px solid #00CC66;
     background: #111;
     color: #fff;
     outline: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.barra-pesquisa input:focus {
+    border-color: #00FF88;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
 }
 
 .filtros {
@@ -57,21 +62,25 @@ body {
     gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 30px;
 }
 
 .filtros select {
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #00CC66;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 2px solid #00CC66;
     background: #111;
     color: #fff;
     outline: none;
     font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* GRID DE VAGAS */
+.filtros select:hover {
+    border-color: #00FF88;
+}
+
+/* --- LISTA DE VAGAS --- */
 .vagas-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -95,91 +104,51 @@ body {
     }
 }
 
-/* CARD */
+/* --- CARD DE VAGA --- */
 .vaga-card {
-    background: #000000;
-    border: 1px solid #00CC66;
+    background: #0a0a0a;
+    border: 2px solid #00CC66;
     border-radius: 12px;
-    padding: 25px;
+    padding: 30px;
     text-align: center;
-    color: #fff;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0, 204, 102, 0.1);
+    animation: fadeInUp 0.8s ease both;
 }
 
 .vaga-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 204, 102, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    border-color: #00FF88;
 }
 
 .vaga-icone {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #00CC66;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .vaga-card h3 {
     color: #00CC66;
+    font-size: 1.3rem;
     margin-bottom: 10px;
 }
 
 .vaga-card p {
-    font-size: 0.95rem;
-    line-height: 1.4;
+    font-size: 1rem;
     color: #ccc;
+    margin-bottom: 20px;
 }
 
-/* BLOCO VIP */
-.vaga-vip {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    color: #000;
-    border-radius: 20px;
-    margin: 60px auto;
-    padding: 40px;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1000px;
-}
-
-.vip-texto {
-    flex: 1;
-}
-
-.vip-texto h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #000;
-}
-
-.vip-texto p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-}
-
-.vip-img img {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-}
-
-/* BOTÃO VER MAIS */
-.see-more {
-    text-align: center;
-    margin: 40px 0 80px 0;
-}
-
+/* --- BOTÕES --- */
 .btn {
     display: inline-block;
-    padding: 16px 32px;
-    border-radius: 8px;
+    padding: 12px 26px;
+    border-radius: 6px;
     font-weight: bold;
     text-decoration: none;
-    transition: 0.3s;
     cursor: pointer;
-    font-size: 1rem;
+    transition: 0.3s;
 }
 
 .btn-green {
@@ -189,13 +158,60 @@ body {
 }
 
 .btn-green:hover {
-    background: #009944;
+    background: #00FF88;
+    transform: translateY(-3px);
 }
 
-/* LOADER */
-.loader {
-    text-align: center;
-    color: #00CC66;
-    font-size: 1.2rem;
-    margin: 40px 0;
+/* --- VAGA VIP --- */
+.vaga-vip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #00CC66, #00a152);
+    color: #000;
+    border-radius: 20px;
+    margin: 70px auto;
+    padding: 40px;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    box-shadow: 0 0 25px rgba(0, 204, 102, 0.4);
+}
+
+.vip-texto {
+    flex: 1;
+}
+
+.vip-texto h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vip-texto p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.vip-img img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;    
+    background-color: black;
+}
+
+/* --- ANIMAÇÃO --- */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

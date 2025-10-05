@@ -1,123 +1,193 @@
-
-/* --- SOBRE NÓS --- */
-.about {
-    padding: 60px 0;
+/* --- BASE --- */
+body {
     background: #000;
     color: #fff;
+    font-family: "Sansation", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Título da seção Sobre Nós */
+/* --- SEÇÃO PRINCIPAL SOBRE NÓS --- */
+.about {
+    padding: 80px 20px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
 .about-title {
-    position: relative;
-    display: inline-block;
-    font-size: 2.2rem;
-    font-weight: bold;
+    font-size: 3rem;
     color: #00CC66;
     margin-bottom: 40px;
-    text-align: center;
-    width: 100%;
+    position: relative;
 }
 
-.about-title::before {
+.about-title::after {
     content: "";
     position: absolute;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
+    width: 300px;
     height: 2px;
     background: linear-gradient(to right, transparent, #00CC66, transparent);
 }
 
-/* Faixa verde com gradiente */
-.about-banner-bg {
-    position: relative;
-    background: linear-gradient(to right, #000, #00CC66 50%, #000);
-    padding: 60px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-/* Texto acima do retângulo */
-.about-top-text {
-    text-align: center;
-    color: #fafafa;
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-}
-
-/* Retângulo preto arredondado */
-.about-banner {
+/* INTRO */
+.about-intro {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    background-color: #000000;
-    padding: 60px;
-    border-radius: 20px;
-    max-width: 1000px;
-    width: 90%;
-    color: #fff;
-    z-index: 2;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 60px;
+    margin-bottom: 80px;
 }
 
-.about-image img {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-}
-
-.about-right-text {
+.about-intro-text {
     flex: 1;
+    min-width: 300px;
+    max-width: 600px;
     text-align: left;
 }
 
-.about-right-text p {
-    line-height: 1.6;
+.about-intro-text h3 {
+    color: #00CC66;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.social-icons {
+.about-intro-text p {
+    font-size: 1.1rem;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-intro-image img {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #00CC66;
+    box-shadow: 0 0 20px rgba(0, 204, 102, 0.3);
+}
+
+/* --- CARDS DE DESTAQUES (6 CARDS, 2 LINHAS X 3 COLUNAS) --- */
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
+    align-items: stretch;
+    margin: 80px auto;
+    max-width: 1100px;
+}
+
+.feature-card {
+    background: #0a0a0a;
+    border: 2px solid #00CC66;
+    border-radius: 12px;
+    padding: 40px 30px;
+    transition: all 0.3s;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 204, 102, 0.1);
+    height: 100%;
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.social-icons a {
-    color: #000000;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: 0.3s;
+.feature-card:hover {
+    background: #00CC66;
+    color: #000;
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(0, 204, 102, 0.6);
 }
 
-.social-icons a:hover {
-    color: #000000;
+.feature-card i {
+    font-size: 2.5rem;
+    color: #00CC66;
+    margin-bottom: 20px;
+    transition: color 0.3s;
 }
 
-/* RESPONSIVIDADE SOBRE */
-@media (max-width: 1024px) {
-    .about-banner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-right-text {
-        text-align: center;
-    }
-
-    .about-image img {
-        margin-bottom: 20px;
-    }
+.feature-card:hover i {
+    color: #000;
 }
 
-@media (max-width: 600px) {
-    .about-banner-bg {
-        padding: 60px 10px;
-    }
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* --- SEÇÃO GAMIFICAÇÃO --- */
+.gamification {
+    margin-top: 100px;
+    background: radial-gradient(circle at center, #002200 0%, #000 80%);
+    border-top: 2px solid #00CC66;
+    border-bottom: 2px solid #00CC66;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.gamification-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gamification-content h2 {
+    color: #00CC66;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.gamification-content p {
+    color: #ddd;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.gamification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 40px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.gamification-list li {
+    background: #111;
+    border: 1px solid #00CC66;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.gamification-list li i {
+    color: #00CC66;
+    font-size: 1.3rem;
+}
+
+.gamification-list li:hover {
+    background: #00CC66;
+    color: #000;
+    transform: translateX(10px);
+}
+
+.gamification-list li:hover i {
+    color: #000;
 }
 
 /* --- NOSSA EQUIPE --- */
@@ -126,40 +196,36 @@
     background: #000;
 }
 
-/* Header: título | divisor | subtítulo+texto */
 .team-section-header {
     display: flex;
-    align-items: center;        /* centraliza verticalmente */
-    justify-content: center;    /* centraliza horizontalmente */
-    gap: 50px;                  /* espaço entre colunas */
-    margin: 0 auto 60px auto;   /* centraliza com margin auto */
-    max-width: 900px;           /* largura máxima para alinhar */
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin: 0 auto 60px auto;
+    max-width: 900px;
 }
 
-/* Título à esquerda */
 .team-title {
-    flex: 1;                    
+    flex: 1;
     font-size: 2.5rem;
     font-weight: bold;
     color: #00CC66;
     margin: 0;
-    text-align: right;          
+    text-align: right;
     white-space: nowrap;
 }
 
-/* Linha vertical */
 .team-divider {
     width: 3px;
-    height: 100px; 
+    height: 100px;
     background: linear-gradient(to bottom, transparent, #00CC66, transparent);
     border-radius: 2px;
 }
 
-/* Bloco da direita */
 .team-right {
-    flex: 1;                    
+    flex: 1;
     max-width: 500px;
-    text-align: left;           
+    text-align: left;
 }
 
 .team-subtitle {
@@ -173,10 +239,8 @@
     font-size: 1rem;
     color: #ccc;
     line-height: 1.6;
-    margin: 0;
 }
 
-/* Grid dos membros */
 .team {
     display: flex;
     justify-content: center;
@@ -184,9 +248,8 @@
     gap: 30px;
 }
 
-/* Card de cada membro */
 .team-card {
-    background: #000000;
+    background: #111;
     border: 2px solid #00CC66;
     border-radius: 15px;
     padding: 25px;
@@ -215,7 +278,6 @@
     margin-bottom: 10px;
 }
 
-/* Texto normal dos parágrafos */
 .team-card p {
     font-size: 0.9rem;
     color: #ddd;
@@ -223,21 +285,25 @@
     margin-bottom: 12px;
 }
 
-/* Labels */
 .team-card p strong {
-    display: block;          /* cada label numa linha própria */
+    display: block;
     color: #00CC66;
     font-weight: bold;
     margin-bottom: 2px;
 }
 
-/* Espaçamento extra entre Função e Principais habilidades */
-.team-card p:nth-of-type(2) {
-    margin-top: 30px;
-}
-
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 1024px) {
+    .about-intro {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
     .team-section-header {
         flex-direction: column;
         align-items: center;
@@ -245,7 +311,6 @@
         gap: 20px;
     }
 
-    /* linha vira horizontal */
     .team-divider {
         width: 50%;
         height: 3px;
@@ -255,13 +320,25 @@
 
     .team-title,
     .team-right {
-        max-width: 100%;
         text-align: center;
     }
 }
 
 @media (max-width: 600px) {
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+
     .team-card {
         width: 90%;
+    }
+
+    .gamification-content h2 {
+        font-size: 2rem;
     }
 }
