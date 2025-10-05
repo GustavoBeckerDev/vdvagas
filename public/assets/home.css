@@ -1,5 +1,4 @@
 /* --- GERAL --- */
-
 body {
     background-color: #000;
     color: #fff;
@@ -46,7 +45,6 @@ body {
     margin-bottom: 20px;
     padding-bottom: 100px;
     position: relative;
-    /* necessário para a linha ::after */
 }
 
 .hero-text {
@@ -85,9 +83,8 @@ body {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, transparent, #00CC66, transparent);
+    background: #00CC66;
 }
-
 
 /* RESPONSIVIDADE HERO */
 @media (max-width: 1024px) {
@@ -95,7 +92,6 @@ body {
         flex-direction: column-reverse;
         text-align: center;
     }
-
     .hero-text {
         max-width: 100%;
     }
@@ -105,29 +101,28 @@ body {
 .jobs {
     padding: 60px 40px;
     text-align: center;
+    border-bottom: 2px solid #00CC66;
 }
 
 .jobs h2 {
     position: relative;
     color: #00CC66;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 40px;
     padding-top: 20px;
 }
 
-/* Linha decorativa só no título da seção vagas */
 .jobs h2::before {
     content: "";
     position: absolute;
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
+    width: 1000px;
     height: 2px;
     background: linear-gradient(to right, transparent, #00CC66, transparent);
 }
 
-/* Filtros */
 .filters {
     display: flex;
     justify-content: center;
@@ -145,7 +140,6 @@ body {
     outline: none;
 }
 
-/* GRID DE VAGAS */
 .jobs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -153,20 +147,17 @@ body {
     margin-bottom: 40px;
 }
 
-/* RESPONSIVIDADE GRID */
 @media (max-width: 1024px) {
     .jobs-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 @media (max-width: 600px) {
     .jobs-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* CARD DE VAGA */
 .job-card {
     background: #000000;
     border: 1px solid #00CC66;
@@ -176,167 +167,159 @@ body {
     color: #fff;
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .job-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0, 204, 102, 0.5);
 }
-
 .job-card h3 {
     color: #00CC66;
     margin-bottom: 10px;
 }
-
 .job-card p {
     font-size: 0.95rem;
     line-height: 1.4;
     color: #ccc;
 }
-
 .see-all .btn {
     font-size: 1rem;
     padding: 15px 30px;
 }
 
-/* Linha gradiente abaixo dos Jobs */
-.jobs::after {
-    content: "";
-    display: block;
-    margin-top: 40px;
-    width: 100%;
-    height: 2px;
-    background: #00CC66;
-}
-
-
-/* --- SOBRE NÓS --- */
+/* --- SOBRE NÓS (nova versão moderna) --- */
 .about {
-    padding: 60px 0;
+    padding: 80px 80px;
     background: #000;
     color: #fff;
+    text-align: center;
 }
 
-/* Título da seção Sobre Nós */
 .about-title {
-    position: relative;
-    display: inline-block;
-    font-size: 2.2rem;
-    font-weight: bold;
+    font-size: 3rem;
     color: #00CC66;
     margin-bottom: 40px;
-    text-align: center;
-    width: 100%;
+    position: relative;
 }
 
-.about-title::before {
+.about-title::after {
     content: "";
     position: absolute;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
+    width: 300px;
     height: 2px;
     background: linear-gradient(to right, transparent, #00CC66, transparent);
 }
 
-/* Faixa verde com gradiente */
-.about-banner-bg {
-    position: relative;
-    background: linear-gradient(to right, transparent, #00CC66 50%, transparent);
-    padding: 60px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-/* Texto acima do retângulo */
-.about-top-text {
-    text-align: center;
-    color: #fafafa;
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-}
-
-/* Retângulo preto arredondado */
-.about-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    background-color: #000000;
-    padding: 60px;
-    border-radius: 20px;
-    max-width: 1000px;
-    width: 90%;
-    color: #fff;
-    z-index: 2;
-    flex-wrap: wrap;
-}
-
-.about-image img {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-}
-
-.about-right-text {
-    flex: 1;
-    text-align: left;
-}
-
-.about-right-text p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.social-icons a {
-    color: #000000;
+.about-subtitle {
     font-size: 1.5rem;
-    text-decoration: none;
+    color: #ccc;
+    margin-bottom: 60px;
+}
+
+.about-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+.about-card {
+    background: #111;
+    border: 2px solid #00CC66;
+    border-radius: 15px;
+    padding: 40px 30px;
+    width: 300px;
     transition: 0.3s;
 }
 
-.social-icons a:hover {
-    color: #000000;
+.about-card:hover {
+    background: #00CC66;
+    color: #000;
+    transform: translateY(-8px);
 }
 
-/* RESPONSIVIDADE SOBRE */
-@media (max-width: 1024px) {
-    .about-banner {
-        flex-direction: column;
+.about-card i {
+    font-size: 2.5rem;
+    color: #00CC66;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.about-card:hover i {
+    color: #000;
+}
+
+.about-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.about-card:hover p {
+    color: #000;
+}
+
+.about-modern {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    background: #0a0a0a;
+    border-radius: 20px;
+    padding: 60px 40px;
+    border: 2px solid #00CC66;
+}
+
+.about-modern-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.about-modern-text h3 {
+    color: #00CC66;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-modern-text p {
+    color: #ddd;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.about-modern-image img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #00CC66;
+}
+
+@media (max-width: 900px) {
+    .about-modern {
+        flex-direction: column-reverse;
         text-align: center;
     }
 
-    .about-right-text {
+    .about-modern-text {
         text-align: center;
     }
-
-    .about-image img {
-        margin-bottom: 20px;
-    }
 }
 
-@media (max-width: 600px) {
-    .about-banner-bg {
-        padding: 60px 10px;
-    }
-}
-
-/* --- CONTATO --- */
+/* --- CONTATO (atualizado com mapa e redes sociais) --- */
 .contact {
-    padding: 80px 20px 80px 20px;
+    padding: 80px 40px;
     background: #000;
     color: #00CC66;
     font-family: 'Arial', sans-serif;
-    text-align: center;
 }
 
 .contact-title {
@@ -345,10 +328,11 @@ body {
     font-size: 2.2rem;
     font-weight: bold;
     color: #00CC66;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
 }
 
-/* Barrinha exclusiva só no título Contato */
 .contact-title::before {
     content: "";
     position: absolute;
@@ -360,23 +344,35 @@ body {
     background: linear-gradient(to right, transparent, #00CC66, transparent);
 }
 
-/* Caixa preta do formulário */
-.contact-wrapper {
-    max-width: 500px;
+/* Layout principal da seção */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 50px;
+}
+
+/* Formulário (lado esquerdo) */
+.contact-left {
+    flex: 1;
+    min-width: 320px;
+}
+
+.contact-form {
+    padding: 40px;
     border: 2px solid #00CC66;
-    border-radius: 25px;
+    border-radius: 20px;
     background-color: #000;
     text-align: left;
 }
 
-/* Formulário */
 .contact-form label {
     font-weight: bold;
     display: block;
     margin-bottom: 8px;
-    text-align: left;
     color: #00CC66;
     font-size: 0.95rem;
 }
@@ -391,16 +387,9 @@ body {
     color: #fff;
     outline: none;
     font-size: 1rem;
-    transition: all 0.3s;
+    margin-bottom: 20px;
 }
 
-/* inputs ocupam 100%, mas o botão NÃO */
-.contact-form>*:not(.contact-btn) {
-    margin-bottom: 25px;
-    width: 100%;
-}
-
-/* Caixa reCAPTCHA/checkbox */
 .recaptcha-wrapper {
     display: flex;
     align-items: center;
@@ -408,12 +397,11 @@ body {
     border: 2px solid #00CC66;
     padding: 12px 15px;
     border-radius: 12px;
-    background-color: #000000;
+    background-color: #000;
     width: fit-content;
     margin-bottom: 25px;
 }
 
-/* Checkbox */
 .recaptcha-wrapper input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -421,24 +409,73 @@ body {
     cursor: pointer;
 }
 
-/* Botão de confirmação */
 .contact-btn {
     border: 2px solid #00CC66;
     border-radius: 5px;
-    background-color: #000000;
+    background-color: #000;
     color: #00CC66;
     padding: 12px 25px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: none;
-    width: auto;
-    display: inline-block;
 }
 
 .contact-btn:hover {
     background-color: #00CC66;
     color: #000;
     transform: translateY(-2px);
-    box-shadow: none;
+}
+
+/* Lado direito (mapa e redes sociais) */
+.contact-right {
+    flex: 1;
+    min-width: 320px;
+    text-align: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #00CC66;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-info h3 {
+    color: #00CC66;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #00CC66;
+    font-size: 1.8rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-left, .contact-right {
+        width: 100%;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
 }

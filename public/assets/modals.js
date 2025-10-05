@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modals = document.querySelectorAll('.modal'); // todos os diálogos/modal
     const btnLogin = document.querySelector('.btn-login'); // botão de abrir login no header
     const btnCadastro = document.querySelector('.btn-signup'); // botão de cadastro (abre login aqui)
+    const homeSignupBtn = document.querySelector('.open-signup-modal'); // botão "Experimente Grátis" na home
 
     // openModal(modalId)
     // - Exibe o overlay da página e o modal identificado por modalId.
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Fecha todos os modais
     function closeAllModals() {
         modals.forEach(m => {
             m.style.display = 'none';
@@ -61,10 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Conecta os gatilhos de abrir/fechar
+    // === GATILHOS DE ABERTURA DE MODAIS ===
     if (btnLogin) btnLogin.addEventListener('click', () => openModal('modalLogin'));
-    // Open signup modal when clicking the header 'Cadastre-se' button
     if (btnCadastro) btnCadastro.addEventListener('click', () => openModal('modalSignup'));
+
+    // Novo: botão "Experimente Grátis" da home também abre o modal de cadastro
+    if (homeSignupBtn) {
+        homeSignupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('modalSignup');
+        });
+    }
 
     // Clique no overlay fecha qualquer modal aberto
     if (overlay) overlay.addEventListener('click', closeAllModals);
@@ -93,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const toggle = e.target.closest('.toggle-password');
         if (!toggle) return;
 
-    // Preferir o input dentro do mesmo wrapper .input-icon para que o
-    // handler funcione mesmo se existirem múltiplos formulários/modais na página.
+        // Preferir o input dentro do mesmo wrapper .input-icon para que o
+        // handler funcione mesmo se existirem múltiplos formulários/modais na página.
         const wrapper = toggle.closest('.input-icon');
         let pwd = wrapper ? wrapper.querySelector('input') : null;
         if (!pwd) {
