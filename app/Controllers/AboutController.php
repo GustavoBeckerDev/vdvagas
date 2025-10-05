@@ -12,6 +12,7 @@ class AboutController extends Controller
 
         $dataheader = [
             'title' => 'VD Vagas',
+            'page' => 'about',
             'baseUrl' => $baseUrl
         ];
 

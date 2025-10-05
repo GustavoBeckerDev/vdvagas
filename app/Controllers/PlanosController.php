@@ -12,6 +12,7 @@ class PlanosController extends Controller
 
         $dataheader = [
             'title' => 'VD Vagas',
+            'page' => 'planos',
             'baseUrl' => $baseUrl
         ];
 

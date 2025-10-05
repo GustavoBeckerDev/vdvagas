@@ -9,7 +9,8 @@ class HomeController extends Controller
     public function index()
     {
         $dataheader = [
-            'title' => 'VD Vagas'
+            'title' => 'VD Vagas',
+            'page' => 'home',
         ];
 
         $this->view('layouts/header', $dataheader);

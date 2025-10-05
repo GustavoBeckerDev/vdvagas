@@ -12,6 +12,7 @@ class ContatoController extends Controller
 
         $dataheader = [
             'title' => 'VD Vagas',
+            'page' => 'contato',
             'baseUrl' => $baseUrl
         ];
 

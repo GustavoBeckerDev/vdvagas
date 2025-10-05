@@ -16,6 +16,7 @@ class VagasController extends Controller
 
         $dataheader = [
             'title' => 'Lista de Vagas',
+            'page' => 'vagas',
             'baseUrl' => $baseUrl
         ];
 

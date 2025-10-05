@@ -5,8 +5,30 @@
     box-sizing: border-box;
 }
 
+/* === DESTACAR LINK ATIVO === */
+body[data-page="home"] nav a[href$="/"] {
+  color: #00CC66;
+}
+
+body[data-page="vagas"] nav a[href$="/vagas"] {
+  color: #00CC66;
+}
+
+body[data-page="about"] nav a[href$="/about"] {
+  color: #00CC66;
+}
+
+body[data-page="contato"] nav a[href$="/contato"] {
+  color: #00CC66;
+}
+
+body[data-page="planos"] nav a[href$="/planos"] {
+  color: #00CC66;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Source Serif 4", serif;
     background: #000;
 }
 
@@ -28,7 +50,7 @@ header {
 }
 
 .logo-container img {
-    max-height: 130px;          /* tamanho da logo */
+    max-height: 100px;          /* tamanho da logo */
     width: auto;
     margin: 0;                  /* <<< remove margens extras */
     object-fit: contain;
@@ -47,6 +69,7 @@ nav {
 }
 
 nav a {
+    font-size: 20px;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -56,6 +79,8 @@ nav a {
 nav a:hover {
     color: #00CC66;
 }
+
+
 
 nav .separator {
     color: #00CC66;
