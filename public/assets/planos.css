@@ -1,283 +1,601 @@
-/* --- GERAL --- */
+/* ============================================
+   PLANOS PAGE - PIXEL ART GAMIFICADO CSS
+   ============================================ */
+
+/* --- VARIÁVEIS --- */
+:root {
+    --bg-dark: #0a1520;
+    --bg-darker: #050a10;
+    --neon-green: #00ff88;
+    --neon-green-dark: #00cc66;
+    --neon-blue: #00d4ff;
+    --neon-purple: #aa00ff;
+    --neon-pink: #ff00ff;
+    --gold: #ffd700;
+    --gold-dark: #ffaa00;
+    --orange: #ff8844;
+    --white: #ffffff;
+    --gray: #cccccc;
+    --gray-dark: #666666;
+    --red: #ff4444;
+}
+
+/* --- RESET E BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: "Sansation", sans-serif;
-  margin: 0;
-  padding: 0;
+    background-color: var(--bg-darker);
+    color: var(--white);
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-/* --- TÍTULO PRINCIPAL --- */
-.main-title {
-  text-align: center;
-  font-size: clamp(28px, 6vw, 60px);
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 40px;
-  color: #00cc66;
+/* --- MAIN CONTAINER --- */
+.planos-main {
+    background: var(--bg-darker);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* --- PRIMEIRA SEÇÃO DOS PLANOS --- */
-.menu-planos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+/* Efeito scanline */
+.planos-main::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 136, 0.03) 2px, rgba(0, 255, 136, 0.03) 4px);
+    pointer-events: none;
+    z-index: 1;
 }
 
-.card-planos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  width: 90%;
+/* --- PARTÍCULAS PIXEL ART --- */
+.pixel-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, var(--neon-green), transparent),
+        radial-gradient(2px 2px at 60% 70%, var(--gold), transparent),
+        radial-gradient(1px 1px at 50% 50%, var(--neon-blue), transparent);
+    background-size: 200% 200%;
+    animation: particleFloat 20s ease-in-out infinite;
+    opacity: 0.3;
+    z-index: 0;
 }
 
-.card {
-  background-color: #111;
-  padding: clamp(16px, 4vw, 40px);
-  border-radius: 12px;
-  text-align: center;
-  font-size: clamp(14px, 2.5vw, 18px);
-  line-height: 1.6em;
-  border: 1px solid #00cc66;
-  box-shadow: 0px 0px 20px rgba(0, 255, 153, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+@keyframes particleFloat {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(0, 255, 153, 0.8);
+/* --- HERO SECTION --- */
+.hero-planos {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    border-bottom: 3px solid var(--neon-blue);
 }
 
-.plano-title {
-  color: #00ff99;
-  font-size: clamp(18px, 4vw, 28px);
-  font-weight: bold;
-  margin-bottom: 10px;
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.price {
-  color: #00ff99;
-  font-size: clamp(18px, 3vw, 22px);
-  font-weight: bold;
-  margin: 10px 0 15px 0;
+.hero-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2rem;
+    color: var(--neon-green);
+    margin-bottom: 1.2rem;
+    text-shadow: 
+        0 0 8px var(--neon-green),
+        0 0 16px var(--neon-green),
+        0 0 24px var(--neon-green);
+    letter-spacing: 1.6px;
 }
 
-/* --- PLANO EMPRESA --- */
-.card-plano-empresa {
-  display: flex;
-  justify-content: center;
-  width: 90%;
-  max-width: 900px;
+.title-icon {
+    display: inline-block;
+    animation: rocketPulse 2s ease-in-out infinite;
+    margin-right: 1rem;
+    color: var(--orange);
 }
 
-.card-plano-empresa .card {
-  text-align: left;
-  padding: 40px;
+@keyframes rocketPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
 }
 
-.li-card-empresa {
-  margin-bottom: 10px;
+.hero-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 1.4rem;
+    color: var(--gray);
+    margin-bottom: 1.6rem;
 }
 
-/* --- SELECIONE O PLANO --- */
-.select-planos {
-  margin-top: 80px;
-  padding: 60px 20px;
-  background: linear-gradient(to top, rgba(0, 255, 153, 0.1), transparent);
-  overflow: hidden;
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2.4rem;
+    flex-wrap: wrap;
 }
 
-.select-banner-bg {
-  background: radial-gradient(circle at top, #00cc66, #001a0d 90%);
-  padding: 70px 30px;
-  border-radius: 25px;
-  box-shadow: 0 0 40px rgba(0, 255, 153, 0.3);
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    color: var(--neon-blue);
+    font-size: 0.9rem;
 }
 
-.select-banner-bg h2 {
-  font-size: clamp(26px, 5vw, 42px);
-  color: #fff;
-  margin-bottom: 60px;
-  position: relative;
+.stat-item i {
+    color: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
 }
 
-.select-banner-bg h2::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -12px;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 3px;
-  background: linear-gradient(to right, transparent, #00ff99, transparent);
-  border-radius: 3px;
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
-/* --- CARROSSEL --- */
-.carousel-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+/* --- SEÇÃO DE PLANOS --- */
+.planos-section {
+    padding: 4rem 2rem;
+    background: var(--bg-dark);
+    position: relative;
+    z-index: 2;
 }
 
-.carousel-track {
-  display: flex;
-  gap: 25px;
-  animation: scrollLoop 25s linear infinite;
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
 }
 
-/* Animação de movimento */
-@keyframes scrollLoop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.section-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.4rem;
+    color: var(--neon-blue);
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 8px var(--neon-blue);
+    text-align: center;
 }
 
-/* Cards dentro do carrossel */
-.card-premium {
-  background-color: #000;
-  border: 2px solid transparent;
-  border-image: linear-gradient(45deg, #00ff99, #009944) 1;
-  border-radius: 15px;
-  padding: 35px 25px;
-  box-shadow: 0 0 20px rgba(0, 255, 153, 0.25);
-  transition: all 0.4s ease;
-  width: 260px;
-  min-width: 260px;
-  text-align: left;
-  color: #fff;
-  flex-shrink: 0;
-  cursor: pointer;
-  position: relative;
+.section-title i {
+    margin-right: 1rem;
+    color: var(--orange);
+    animation: gamepadSpin 3s linear infinite;
 }
 
-/* Efeito de destaque ao passar o mouse */
-.card-premium:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 30px rgba(0, 255, 153, 0.6);
+@keyframes gamepadSpin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
 }
 
-/* Card Premium destacado */
-.card-premium.destaque {
-  background: radial-gradient(circle at top, #00cc66 15%, #000 85%);
-  border: 2px solid #00ff99;
-  box-shadow: 0 0 45px rgba(0, 255, 153, 0.8);
+/* --- GRID DE PLANOS --- */
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-.card-title {
-  color: #00ff99;
-  font-size: clamp(18px, 3vw, 26px);
-  font-weight: bold;
-  margin-bottom: 12px;
+/* --- CARDS DE PLANOS --- */
+.plan-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--neon-green-dark);
+    border-radius: 12px;
+    padding: 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 16px rgba(0, 255, 136, 0.2);
 }
 
-.card-premium .price {
-  color: #fff;
-  font-weight: bold;
-  margin-bottom: 15px;
+.plan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transition: left 0.5s;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.card-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.plan-card:hover::before {
+    left: 100%;
 }
 
-.card-list li {
-  position: relative;
-  margin: 10px 0;
-  padding-left: 25px;
-  color: #ddd;
-  font-size: 15px;
-  line-height: 1.5em;
+.plan-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-green);
 }
 
-.card-list li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #00ff99;
-  font-weight: bold;
+/* PLANO BÁSICO */
+.plan-card.basic {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
 }
 
-/* --- INTERAÇÕES --- */
-/* Pausar carrossel ao passar o mouse */
-.carousel-track:hover {
-  animation-play-state: paused;
+.plan-card.basic:hover {
+    border-color: var(--neon-blue);
 }
 
-/* Adicionar brilho e zoom ao card ativo */
-.card-premium:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(0, 255, 153, 0.8);
+/* PLANO AVANÇADO */
+.plan-card.advanced {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 20px rgba(170, 0, 255, 0.2);
+    position: relative;
 }
 
-/* --- BOTÃO --- */
-.assinar-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
+.plan-card.advanced:hover {
+    border-color: var(--neon-purple);
 }
 
-.assinar-button input {
-  background: linear-gradient(to right, #00ff99, #00cc66);
-  color: #000;
-  border: none;
-  padding: 14px 45px;
-  border-radius: 10px;
-  font-size: clamp(18px, 4vw, 22px);
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.4s ease;
+.plan-card.advanced * {
+    position: relative;
+    z-index: 3;
 }
 
-.assinar-button input:hover {
-  background: linear-gradient(to right, #00cc66, #00ff99);
-  box-shadow: 0 0 30px rgba(0, 255, 153, 0.7);
-  transform: translateY(-3px);
+/* PLANO PREMIUM */
+.plan-card.premium {
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.plan-card.premium:hover {
+    border-color: var(--gold);
+}
+
+.plan-card.featured {
+    position: relative;
+    overflow: visible;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -12px;
+    right: 16px;
+    background: var(--gold);
+    color: var(--bg-darker);
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.48rem;
+    font-weight: bold;
+    z-index: 10;
+    animation: badgePulse 2s ease-in-out infinite;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* PLANO EMPRESA */
+.plan-card.enterprise {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+.plan-card.enterprise:hover {
+    border-color: var(--neon-pink);
+}
+
+/* --- ELEMENTOS DOS CARDS --- */
+.plan-header {
+    text-align: center;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.plan-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--neon-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.8rem;
+    box-shadow: 0 0 16px rgba(0, 255, 136, 0.5);
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.plan-icon i {
+    font-size: 1.2rem;
+    color: var(--bg-darker);
+}
+
+.plan-name {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+    text-shadow: 0 0 8px currentColor;
+}
+
+.plan-level {
+    font-family: 'VT323', monospace;
+    font-size: 0.8rem;
+    color: var(--gray);
+    text-transform: uppercase;
+}
+
+/* --- PREÇOS --- */
+.plan-price {
+    text-align: center;
+    margin: 1.2rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.currency {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: var(--gray);
+    vertical-align: top;
+}
+
+.amount {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--neon-green);
+    text-shadow: 0 0 12px currentColor;
+    margin: 0 0.16rem;
+}
+
+.period {
+    font-family: 'VT323', monospace;
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+/* --- RECURSOS --- */
+.plan-features {
+    margin: 1.6rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.64rem;
+    margin-bottom: 0.8rem;
+    font-family: 'VT323', monospace;
+    font-size: 0.9rem;
+}
+
+.feature-item i {
+    color: var(--neon-green);
+    font-size: 1rem;
+    width: 16px;
+}
+
+.feature-item.disabled i {
+    color: var(--red);
+}
+
+.feature-item.disabled span {
+    color: var(--gray-dark);
+    text-decoration: line-through;
+}
+
+/* --- BOTÕES DOS PLANOS --- */
+.plan-button {
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--neon-green);
+    border-radius: 6px;
+    color: var(--neon-green);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.64rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.plan-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--neon-green);
+    transition: left 0.3s;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.plan-button:hover::before {
+    left: 0;
+}
+
+.plan-button:hover {
+    color: var(--bg-darker);
+    border-color: var(--neon-green);
+    transform: translateY(-2px);
+}
+
+.plan-button i {
+    margin-right: 0.5rem;
+}
+
+/* Cores específicas dos botões */
+.plan-card.basic .plan-button {
+    border-color: var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+.plan-card.basic .plan-button::before {
+    background: var(--neon-blue);
+}
+
+.plan-card.basic .plan-button:hover {
+    border-color: var(--neon-blue);
+}
+
+.plan-card.advanced .plan-button {
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+}
+
+.plan-card.advanced .plan-button::before {
+    background: var(--neon-purple);
+}
+
+.plan-card.advanced .plan-button:hover {
+    border-color: var(--neon-purple);
+}
+
+.plan-card.premium .plan-button {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.plan-card.premium .plan-button::before {
+    background: var(--gold);
+}
+
+.plan-card.premium .plan-button:hover {
+    border-color: var(--gold);
+}
+
+.plan-card.enterprise .plan-button {
+    border-color: var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+.plan-card.enterprise .plan-button::before {
+    background: var(--neon-pink);
+}
+
+.plan-card.enterprise .plan-button:hover {
+    border-color: var(--neon-pink);
 }
 
 /* --- RESPONSIVIDADE --- */
-@media (max-width: 1024px) {
-  .carousel-track {
-    animation: scrollLoop 30s linear infinite;
-  }
+@media (max-width: 1200px) {
+    .planos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.2rem;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 768px) {
-  .select-banner-bg {
-    padding: 40px 20px;
-  }
-
-  .card-premium {
-    min-width: 220px;
-  }
-
-  .carousel-track {
-    animation: scrollLoop 35s linear infinite;
-  }
-
-  .assinar-button input {
-    width: 100%;
-    max-width: 300px;
-  }
+    .hero-planos {
+        padding: 1.6rem 0.8rem;
+    }
+    
+    .hero-title {
+        font-size: 1.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.12rem;
+    }
+    
+    .hero-stats {
+        gap: 1.2rem;
+    }
+    
+    .planos-section {
+        padding: 1.6rem 0.8rem;
+    }
+    
+    .planos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    
+    .plan-card {
+        padding: 1.2rem;
+    }
+    
+    .plan-button {
+        font-size: 0.56rem;
+        padding: 0.64rem 1.2rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .card-premium {
-    min-width: 200px;
-    padding: 25px 18px;
-  }
+    .hero-title {
+        font-size: 0.96rem;
+    }
+    
+    .section-title {
+        font-size: 0.96rem;
+    }
+    
+    .plan-card {
+        padding: 0.8rem;
+    }
+    
+    .plan-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .plan-icon i {
+        font-size: 0.96rem;
+    }
+    
+    .amount {
+        font-size: 1.6rem;
+    }
+    
+    .plan-button {
+        font-size: 0.48rem;
+        padding: 0.56rem 0.8rem;
+    }
+    
+    .featured-badge {
+        font-size: 0.4rem;
+        padding: 0.24rem 0.64rem;
+    }
 }
