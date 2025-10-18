@@ -10,8 +10,10 @@
     </style>
 </head>
 <body>
+
     <h1>Oops!</h1>
     <p>Ocorreu um erro inesperado. Nossa equipe já foi notificada.</p>
     <p>Por favor, tente novamente mais tarde.</p>
+     
 </body>
 </html>

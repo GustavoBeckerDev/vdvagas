@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Elementos raiz usados pela lógica de modais
     const overlay = document.getElementById('modalOverlay'); // elemento de overlay da página
     const modals = document.querySelectorAll('.modal'); // todos os diálogos/modal
-    const btnLogin = document.querySelector('.btn-login'); // botão de abrir login no header
-    const btnCadastro = document.querySelector('.btn-signup'); // botão de cadastro (abre login aqui)
+    
+    // Suporte para botões antigos e novos (pixel art)
+    const btnLogin = document.querySelector('.btn-login, .btn-login-pixel'); // botão de abrir login no header
+    const btnCadastro = document.querySelector('.btn-signup, .btn-signup-pixel'); // botão de cadastro
     const homeSignupBtn = document.querySelector('.open-signup-modal'); // botão "Experimente Grátis" na home
 
     // openModal(modalId)

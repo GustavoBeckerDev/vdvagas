@@ -1,37 +1,82 @@
-/* Fundo escurecido */
+/* ============================================
+   MODAIS PIXEL ART GAMIFICADO
+   ============================================ */
+
+/* Fundo escurecido com efeito pixel */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(5, 10, 16, 0.95);
+    backdrop-filter: blur(5px);
     display: none;
     z-index: 999;
+    animation: overlayFadeIn 0.3s ease;
 }
 
-/* Estrutura geral do modal */
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Estrutura geral do modal - Estilo Pixel Art */
 .modal {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.95);
-    background: #000;
-    border: 3px solid #00CC66;
-    border-radius: 20px;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
+    border: 4px solid #00ff88;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 136, 0.4),
+        inset 0 0 30px rgba(0, 255, 136, 0.05);
     padding: 28px 26px;
     z-index: 1000;
     display: none;
-    transition: all 0.22s ease;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     color: #fff;
-    width: 360px;
+    width: 400px;
     max-width: 94%;
+    font-family: 'VT323', monospace;
+}
+
+/* Cantos decorativos pixel art */
+.modal::before,
+.modal::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #00ff88;
+}
+
+.modal::before {
+    top: -3px;
+    left: -3px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.modal::after {
+    bottom: -3px;
+    right: -3px;
+    border-left: none;
+    border-top: none;
 }
 
 /* Animação ao abrir */
 .modal.active {
     display: block;
     transform: translate(-50%, -50%) scale(1);
+    animation: modalBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes modalBounce {
+    0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 }
 
 /* Ajustes para ativar o fundo opaco */
@@ -39,37 +84,52 @@
     display: block;
 }
 
-/* Botão de fechar modal */
+/* Botão de fechar modal - Pixel Art */
 .modal-close {
     background: transparent;
-    border: none;
-    color: #00CC66;
-    font-size: 1.8rem;
+    border: 2px solid #00ff88;
+    color: #00ff88;
+    font-size: 1.5rem;
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 15px;
     cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1;
 }
 
 .modal-close:hover {
-    color: #00994d;
+    background: #00ff88;
+    color: #0a1520;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+    transform: rotate(90deg);
 }
 
 /* ==========================
     Estilos específicos do login (migrado de modalLogin.css)
     ========================== */
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Sansation", sans-serif;
+}
+
+:root {
     --green:#00cc66;
     --bg:#000;
     --panel-bg:#000;
     --text:#e6e6e6;
     --muted:#9a9a9a;
-    --radius:18px;
-    --font-stack: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    --radius:18px; 
 }
-
-@font-face{font-family:Montserrat; src: url('../fontes/Montserrat/static/Montserrat-VariableFont_wght.ttf') format('truetype');}
 
 .login-inner{
     width:360px;
@@ -194,13 +254,17 @@
 #modalLogin h2 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #00cc66;
+    color: #00ff88;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+    text-transform: uppercase;
 }
 
 #modalLogin p {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 20px;
-    color: #ffffff; /* parágrafo do login em branco */
+    color: #cccccc;
+    font-family: 'VT323', monospace;
 }
 
 #modalLogin .form-group {
@@ -239,18 +303,25 @@
 }
 
 #modalLogin .login-button {
-    background-color: #00cc66;
-    color: #000;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: transparent;
+    color: #00ff88;
+    border: 3px solid #00ff88;
+    padding: 12px;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 12px; /* espaço abaixo do botão Log in solicitado */
+    margin-bottom: 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
 }
 
 #modalLogin .login-button:hover {
-    background-color: #00994d;
+    background-color: #00ff88;
+    color: #0a1520;
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+    transform: translateY(-2px);
 }
 
 
@@ -307,13 +378,17 @@
 #modalSignup h2 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #00cc66;
+    color: #00ff88;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+    text-transform: uppercase;
 }
 
 #modalSignup p {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 20px;
-    color: #ffffff; /* texto introdutório em branco conforme solicitado */
+    color: #cccccc;
+    font-family: 'VT323', monospace;
 }
 
 #modalSignup .form-group {
@@ -351,18 +426,25 @@
 }
 
 #modalSignup .login-button {
-    background-color: #00cc66;
-    color: #000;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: transparent;
+    color: #ffd700;
+    border: 3px solid #ffd700;
+    padding: 12px;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 12px; /* Espaço abaixo do botão Criar Conta */
+    margin-bottom: 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 #modalSignup .login-button:hover {
-    background-color: #00994d;
+    background-color: #ffd700;
+    color: #0a1520;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    transform: translateY(-2px);
 }
 
 
