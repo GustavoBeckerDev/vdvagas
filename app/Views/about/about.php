@@ -1,5 +1,10 @@
 <main class="about-game pixel-game">
 
+    <!-- TÍTULO PRINCIPAL -->
+    <section class="main-title-section">
+        <h1 class="main-title">SOBRE NÓS</h1>
+    </section>
+
     <!-- HERO GAMIFICADO -->
     <section class="hero-about">
         <div class="pixel-particles"></div>
@@ -35,9 +40,7 @@
     <section class="trilhas-section">
         <div class="section-header">
             <h2 class="pixel-title">
-                <img src="<?= $baseUrl ?>/public/imagens/evolution-vdvagas.png" alt="Evolution" class="title-icon-img">
                 TRILHAS DE EVOLUÇÃO
-                <img src="<?= $baseUrl ?>/public/imagens/evolution-vdvagas.png" alt="Evolution" class="title-icon-img">
             </h2>
             <p class="section-subtitle">Complete missões e evolua sua carreira como um verdadeiro jogador</p>
         </div>
@@ -122,9 +125,7 @@
     <section class="badges-section">
         <div class="section-header">
             <h2 class="pixel-title">
-                <img src="<?= $baseUrl ?>/public/imagens/logo-trofeu.png" alt="Troféu" class="title-icon-img">
                 SISTEMA DE BADGES E XP
-                <img src="<?= $baseUrl ?>/public/imagens/logo-trofeu.png" alt="Troféu" class="title-icon-img">
             </h2>
             <p class="section-subtitle">Ganhe experiência, desbloqueie conquistas e evolua sua visibilidade</p>
         </div>
@@ -152,7 +153,7 @@
             </div>
 
             <div class="badge-card">
-                <img src="<?= $baseUrl ?>/public/imagens/evolution-vdvagas.png" alt="Badge Evolution" class="badge-image">
+                <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Badge Evolution" class="badge-image">
                 <h3 class="badge-title">Explorador</h3>
                 <p class="badge-description">Candidate-se a 5 vagas diferentes</p>
                 <div class="badge-reward">+500 XP</div>
@@ -164,9 +165,7 @@
     <section class="profile-example-section">
         <div class="section-header">
             <h2 class="pixel-title">
-                <img src="<?= $baseUrl ?>/public/imagens/badge-candidato.png" alt="Profile" class="title-icon-img">
                 EXEMPLO DE PERFIL
-                <img src="<?= $baseUrl ?>/public/imagens/badge-candidato.png" alt="Profile" class="title-icon-img">
             </h2>
             <p class="section-subtitle">Veja como fica o perfil gamificado de um usuário da plataforma</p>
         </div>
@@ -254,7 +253,7 @@
                             <span class="badge-name">Primeira Vaga</span>
                         </div>
                         <div class="badge-item earned">
-                            <img src="<?= $baseUrl ?>/public/imagens/evolution-vdvagas.png" alt="Badge Evolution" class="badge-icon">
+                            <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Badge Evolution" class="badge-icon">
                             <span class="badge-name">Explorador</span>
                         </div>
                         <div class="badge-item locked">
@@ -361,9 +360,7 @@
     <section class="vip-advantages-section">
         <div class="section-header">
             <h2 class="pixel-title vip-title">
-                <img src="<?= $baseUrl ?>/public/imagens/foguete.png" alt="Foguete" class="title-icon-img">
                 VANTAGENS VIP
-                <img src="<?= $baseUrl ?>/public/imagens/foguete.png" alt="Foguete" class="title-icon-img">
             </h2>
             <p class="section-subtitle">Usuários VIP têm acesso antecipado e benefícios exclusivos</p>
         </div>

@@ -150,12 +150,12 @@
             <!-- Trilha 4: Explorador de Vagas -->
             <div class="quest-card">
                 <div class="quest-header">
-                    <img src="<?= $baseUrl ?>/public/imagens/evolution-vdvagas.png" alt="Evolution Badge" class="quest-badge">
+                    <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Evolution Badge" class="quest-badge">
                     <div class="quest-level">
                         <span class="level-text">NÍVEL 3</span>
                     </div>
                 </div>
-                <h3 class="quest-title">Explorador de Vagas</h3>
+                <h3 class="quest-title">Explorador de Vagas</h3>    
                 <p class="quest-description">
                     Explore diferentes setores e descubra oportunidades únicas. 
                     Candidate-se a 5 vagas diferentes e ganhe +500 XP!
