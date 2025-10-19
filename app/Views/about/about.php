@@ -1,10 +1,5 @@
 <main class="about-game pixel-game">
 
-    <!-- TÍTULO PRINCIPAL -->
-    <section class="main-title-section">
-        <h1 class="main-title">SOBRE NÓS</h1>
-    </section>
-
     <!-- HERO GAMIFICADO -->
     <section class="hero-about">
         <div class="pixel-particles"></div>
@@ -24,7 +19,7 @@
                         <span class="stat-value">Sistema XP</span>
                     </div>
                     <div class="stat-item">
-                        <img src="<?= $baseUrl ?>/public/imagens/logo-trofeu.png" alt="Trilhas" class="stat-icon-img">
+                        <img src="<?= $baseUrl ?>/public/imagens/personagem.png" alt="Trilhas" class="stat-icon-img">
                         <span class="stat-value">Trilhas</span>
                     </div>
                 </div>
@@ -48,7 +43,6 @@
         <div class="trilhas-map">
             <!-- Trilha 1: Primeiro Currículo -->
             <div class="trilha-card trilha-start">
-                <div class="trilha-connection trilha-connection-right"></div>
                 <div class="trilha-header">
                     <img src="<?= $baseUrl ?>/public/imagens/badge-perfil-frote.png" alt="Badge Perfil" class="trilha-badge">
                     <div class="trilha-level">
@@ -72,8 +66,6 @@
 
             <!-- Trilha 2: Primeira Candidatura -->
             <div class="trilha-card trilha-middle">
-                <div class="trilha-connection trilha-connection-left"></div>
-                <div class="trilha-connection trilha-connection-right"></div>
                 <div class="trilha-header">
                     <img src="<?= $baseUrl ?>/public/imagens/badge-1-conquista.png" alt="Badge Conquista" class="trilha-badge">
                     <div class="trilha-level">
@@ -97,7 +89,6 @@
 
             <!-- Trilha 3: Primeira Vaga -->
             <div class="trilha-card trilha-featured">
-                <div class="trilha-connection trilha-connection-left"></div>
                 <div class="trilha-header">
                     <img src="<?= $baseUrl ?>/public/imagens/badge-1-vaga.png" alt="Badge Primeira Vaga" class="trilha-badge">
                     <div class="trilha-level legendary">
@@ -116,6 +107,28 @@
                 <div class="progress-bar legendary">
                     <div class="progress-fill" style="width: 0%"></div>
                     <span class="progress-text">0/10 Etapas</span>
+                </div>
+            </div>
+
+            <!-- Trilha 4: Explorador de Vagas -->
+            <div class="trilha-card trilha-end">
+                <div class="trilha-header">
+                    <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Badge Explorador" class="trilha-badge">
+                    <div class="trilha-level">
+                        <span class="level-text">NÍVEL 4</span>
+                    </div>
+                </div>
+                <h3 class="trilha-title">Explorador de Vagas</h3>
+                <p class="trilha-description">
+                    Explore diferentes setores e descubra oportunidades únicas. Candidate-se a 5 vagas diferentes e ganhe +500 XP!
+                </p>
+                <div class="trilha-rewards">
+                    <span class="reward-item">+500 XP</span>
+                    <span class="reward-item"><i class="fas fa-medal"></i> Badge Explorador</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                    <span class="progress-text">0/5 Vagas</span>
                 </div>
             </div>
         </div>
@@ -197,7 +210,62 @@
                                 <span class="stat-number">3</span>
                                 <span class="stat-label">Trilhas</span>
                             </div>
+                            <div class="stat-box gold-box">
+                                <img src="<?= $baseUrl ?>/public/imagens/gold.png" alt="VDCoins" class="gold-icon">
+                                <span class="stat-number">50</span>
+                                <span class="stat-label">VDCoins</span>
+                            </div>
                         </div>
+                    </div>
+                    
+                    <!-- Badges Conquistadas -->
+                    <div class="profile-badges-container">
+                        <div class="profile-badges-unlocked">
+                            <div class="badge-unlocked">
+                                <img src="<?= $baseUrl ?>/public/imagens/badge-perfil-frote.png" alt="Badge Perfil" class="badge-unlocked-img">
+                            </div>
+                            <div class="badge-unlocked">
+                                <img src="<?= $baseUrl ?>/public/imagens/badge-1-conquista.png" alt="Badge Conquista" class="badge-unlocked-img">
+                            </div>
+                            <div class="badge-unlocked">
+                                <img src="<?= $baseUrl ?>/public/imagens/badge-1-vaga.png" alt="Badge Vaga" class="badge-unlocked-img">
+                            </div>
+                            <div class="badge-unlocked">
+                                <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Badge Explorador" class="badge-unlocked-img">
+                            </div>
+                        </div>
+                        <div class="profile-badges-locked">
+                            <div class="badge-locked">
+                                <img src="<?= $baseUrl ?>/public/imagens/badge-perfil-frote.png" alt="Badge Bloqueada" class="badge-locked-img">
+                            </div>
+                            <div class="badge-locked">
+                                <img src="<?= $baseUrl ?>/public/imagens/badge-1-conquista.png" alt="Badge Bloqueada" class="badge-locked-img">
+                            </div>
+                            <div class="badge-locked">
+                                <img src="<?= $baseUrl ?>/public/imagens/badge-1-vaga.png" alt="Badge Bloqueada" class="badge-locked-img">
+                            </div>
+                            <div class="badge-locked">
+                                <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Badge Bloqueada" class="badge-locked-img">
+                            </div>
+                        </div>
+                        <div class="profile-badges-locked">
+                            <div class="badge-locked">
+                                <img src="<?= $baseUrl ?>/public/imagens/badge-perfil-frote.png" alt="Badge Bloqueada" class="badge-locked-img">
+                            </div>
+                            <div class="badge-locked">
+                                <img src="<?= $baseUrl ?>/public/imagens/badge-1-conquista.png" alt="Badge Bloqueada" class="badge-locked-img">
+                            </div>
+                            <div class="badge-locked">
+                                <img src="<?= $baseUrl ?>/public/imagens/badge-1-vaga.png" alt="Badge Bloqueada" class="badge-locked-img">
+                            </div>
+                            <div class="badge-locked">
+                                <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Badge Bloqueada" class="badge-locked-img">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-character">
+                        <img src="<?= $baseUrl ?>/public/imagens/personagem.png" alt="Personagem" class="character-img">
                     </div>
                 </div>
 
@@ -323,7 +391,7 @@
                         <div class="achievement-item">
                             <div class="achievement-date">Hoje</div>
                             <div class="achievement-content">
-                                <img src="<?= $baseUrl ?>/public/imagens/evolution-vdvagas.png" alt="Achievement" class="achievement-icon">
+                                <img src="<?= $baseUrl ?>/public/imagens/explorador.png" alt="Achievement" class="achievement-icon">
                                 <div class="achievement-text">
                                     <strong>Badge "Explorador" conquistado!</strong>
                                     <p>Candidatou-se a 5 vagas diferentes (+500 XP)</p>
@@ -365,50 +433,57 @@
             <p class="section-subtitle">Usuários VIP têm acesso antecipado e benefícios exclusivos</p>
         </div>
 
-        <div class="vip-comparison">
-            <div class="plan-card free-plan">
-                <h3 class="plan-title">USUÁRIO FREE</h3>
-                <div class="plan-features">
-                    <div class="feature-item">✓ Acesso às vagas públicas</div>
-                    <div class="feature-item">✓ Sistema básico de XP</div>
-                    <div class="feature-item">✓ Badges básicos</div>
-                    <div class="feature-item disabled">✗ Acesso antecipado</div>
-                    <div class="feature-item disabled">✗ Vagas VIP</div>
-                    <div class="feature-item disabled">✗ Badges exclusivos</div>
+        <div class="vip-content-wrapper">
+            <div class="vip-comparison">
+                <div class="plan-card free-plan">
+                    <h3 class="plan-title">USUÁRIO FREE</h3>
+                    <div class="plan-features">
+                        <div class="feature-item">✓ Acesso às vagas públicas</div>
+                        <div class="feature-item">✓ Sistema básico de XP</div>
+                        <div class="feature-item">✓ Badges básicos</div>
+                        <div class="feature-item disabled">✗ Acesso antecipado</div>
+                        <div class="feature-item disabled">✗ Vagas VIP</div>
+                        <div class="feature-item disabled">✗ Badges exclusivos</div>
+                    </div>
+                </div>
+
+                <div class="plan-card vip-plan">
+                    <h3 class="plan-title">USUÁRIO VIP</h3>
+                    <div class="plan-badge">PREMIUM</div>
+                    <div class="plan-features">
+                        <div class="feature-item">✓ Tudo do plano FREE</div>
+                        <div class="feature-item vip">✓ Acesso antecipado às vagas</div>
+                        <div class="feature-item vip">✓ Vagas VIP exclusivas</div>
+                        <div class="feature-item vip">✓ Badges VIP dourados</div>
+                        <div class="feature-item vip">✓ XP multiplicado por 2x</div>
+                        <div class="feature-item vip">✓ Prioridade no atendimento</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="plan-card vip-plan">
-                <h3 class="plan-title">USUÁRIO VIP</h3>
-                <div class="plan-badge">PREMIUM</div>
-                <div class="plan-features">
-                    <div class="feature-item">✓ Tudo do plano FREE</div>
-                    <div class="feature-item vip">✓ Acesso antecipado às vagas</div>
-                    <div class="feature-item vip">✓ Vagas VIP exclusivas</div>
-                    <div class="feature-item vip">✓ Badges VIP dourados</div>
-                    <div class="feature-item vip">✓ XP multiplicado por 2x</div>
-                    <div class="feature-item vip">✓ Prioridade no atendimento</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="vip-benefits">
-            <h3 class="benefits-title">Por que ser VIP?</h3>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <img src="<?= $baseUrl ?>/public/imagens/gold.png" alt="Gold" class="benefit-icon">
-                    <h4>Maior Visibilidade</h4>
-                    <p>Seu perfil aparece em destaque para recrutadores</p>
-                </div>
-                <div class="benefit-item">
-                    <img src="<?= $baseUrl ?>/public/imagens/foguete.png" alt="Foguete" class="benefit-icon">
-                    <h4>Acesso Antecipado</h4>
-                    <p>Veja e candidate-se às vagas antes dos outros</p>
-                </div>
-                <div class="benefit-item">
-                    <img src="<?= $baseUrl ?>/public/imagens/logo-trofeu.png" alt="Troféu" class="benefit-icon">
-                    <h4>Badges Exclusivos</h4>
-                    <p>Conquiste badges VIP únicos e dourados</p>
+            <div class="vip-benefits">
+                <h3 class="benefits-title">Por que ser VIP?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <img src="<?= $baseUrl ?>/public/imagens/gold.png" alt="Gold" class="benefit-icon">
+                        <h4>Maior Visibilidade</h4>
+                        <p>Seu perfil aparece em destaque para recrutadores</p>
+                    </div>
+                    <div class="benefit-item">
+                        <img src="<?= $baseUrl ?>/public/imagens/foguete.png" alt="Foguete" class="benefit-icon">
+                        <h4>Acesso Antecipado</h4>
+                        <p>Veja e candidate-se às vagas antes dos outros</p>
+                    </div>
+                    <div class="benefit-item">
+                        <img src="<?= $baseUrl ?>/public/imagens/logo-trofeu.png" alt="Troféu" class="benefit-icon">
+                        <h4>Badges Exclusivos</h4>
+                        <p>Conquiste badges VIP únicos e dourados</p>
+                    </div>
+                    <div class="benefit-item">
+                        <img src="<?= $baseUrl ?>/public/imagens/personagem.png" alt="Prioridade" class="benefit-icon">
+                        <h4>Suporte Prioritário</h4>
+                        <p>Atendimento rápido e personalizado</p>
+                    </div>
                 </div>
             </div>
         </div>

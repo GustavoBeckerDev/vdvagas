@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<main class="contato-main pixel-game">
+<main id="contato" class="contato-main pixel-game">
     <!-- Partículas de fundo -->
     <div class="pixel-particles"></div>
 
@@ -25,7 +25,6 @@
     <section class="hero-contact">
         <div class="hero-container">
             <h1 class="hero-title">
-                <i class="fas fa-satellite-dish title-icon"></i>
                 CANAL DE COMUNICAÇÃO
             </h1>
             <p class="hero-subtitle">
@@ -52,7 +51,6 @@
     <section class="contact-section">
         <div class="section-header">
             <h2 class="section-title">
-                <i class="fas fa-terminal"></i>
                 INICIAR TRANSMISSÃO
             </h2>
         </div>

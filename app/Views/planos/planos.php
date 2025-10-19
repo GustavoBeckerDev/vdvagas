@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<main class="planos-main pixel-game">
+<main id="planos" class="planos-main pixel-game">
     <!-- Partículas de fundo -->
     <div class="pixel-particles"></div>
 
@@ -94,7 +94,7 @@
                 </div>
                 <button class="plan-button">
                     <i class="fas fa-download"></i>
-                    ADQUIRIR PACOTE
+                    ASSINAR
                 </button>
             </div>
 
@@ -132,7 +132,7 @@
                 </div>
                 <button class="plan-button">
                     <i class="fas fa-download"></i>
-                    ADQUIRIR PACOTE
+                    ASSINAR
                 </button>
             </div>
 
@@ -174,7 +174,7 @@
                 </div>
                 <button class="plan-button">
                     <i class="fas fa-download"></i>
-                    ADQUIRIR PACOTE
+                    ASSINAR
                 </button>
             </div>
 
@@ -212,7 +212,7 @@
                 </div>
                 <button class="plan-button">
                     <i class="fas fa-download"></i>
-                    ADQUIRIR PACOTE
+                    ASSINAR
                 </button>
             </div>
 
@@ -251,7 +251,7 @@
                 </div>
                 <button class="plan-button">
                     <i class="fas fa-download"></i>
-                    ADQUIRIR PACOTE
+                    ASSINAR
                 </button>
             </div>
 
@@ -289,7 +289,7 @@
                 </div>
                 <button class="plan-button">
                     <i class="fas fa-download"></i>
-                    ADQUIRIR PACOTE
+                    ASSINAR
                 </button>
             </div>
 
@@ -331,7 +331,7 @@
                 </div>
                 <button class="plan-button">
                     <i class="fas fa-download"></i>
-                    ADQUIRIR PACOTE
+                    ASSINAR
                 </button>
             </div>
 
@@ -369,7 +369,7 @@
                 </div>
                 <button class="plan-button">
                     <i class="fas fa-download"></i>
-                    ADQUIRIR PACOTE
+                    ASSINAR
                 </button>
             </div>
 
