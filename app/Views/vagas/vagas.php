@@ -1,134 +1,49 @@
 <!-- CSS específico para vagas -->
 <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/vagas.css">
 
-<main class="vagas-main">
+<main id="vagas" class="vagas-main">
     <!-- Filtros -->
     <section class="filters-section">
         <div class="filters-container">
             <h2 class="filters-title">
-                <i class="fas fa-filter"></i>
                 FILTROS DE BUSCA
             </h2>
             
-            <div class="filters-grid">
-                <div class="filter-group">
-                    <label class="filter-label">
-                        <i class="fas fa-search"></i>
-                        Buscar Vaga
-                    </label>
-                    <input type="text" class="filter-input" placeholder="Digite o nome da vaga...">
-                </div>
+            <div class="filters-wrapper">
+                <input type="text" class="filter-input-inline" placeholder="Buscar vaga...">
                 
-                <div class="filter-group">
-                    <label class="filter-label">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Localização
-                    </label>
-                    <select class="filter-select">
-                        <option>Todas as cidades</option>
-                        <option>São Paulo</option>
-                        <option>Rio de Janeiro</option>
-                        <option>Belo Horizonte</option>
-                        <option>Remote</option>
-                    </select>
-                </div>
+                <select class="filter-select-inline">
+                    <option>Localização</option>
+                    <option>São Paulo</option>
+                    <option>Rio de Janeiro</option>
+                    <option>Belo Horizonte</option>
+                    <option>Remote</option>
+                </select>
                 
-                <div class="filter-group">
-                    <label class="filter-label">
-                        <i class="fas fa-code"></i>
-                        Área
-                    </label>
-                    <select class="filter-select">
-                        <option>Todas as áreas</option>
-                        <option>Tecnologia</option>
-                        <option>Marketing</option>
-                        <option>Vendas</option>
-                        <option>Design</option>
-                    </select>
-                </div>
+                <select class="filter-select-inline">
+                    <option>Área</option>
+                    <option>Tecnologia</option>
+                    <option>Marketing</option>
+                    <option>Vendas</option>
+                    <option>Design</option>
+                </select>
                 
-                <div class="filter-group">
-                    <label class="filter-label">
-                        <i class="fas fa-dollar-sign"></i>
-                        Salário
-                    </label>
-                    <select class="filter-select">
-                        <option>Qualquer salário</option>
-                        <option>Até R$ 3.000</option>
-                        <option>R$ 3.000 - R$ 6.000</option>
-                        <option>R$ 6.000 - R$ 10.000</option>
-                        <option>Acima de R$ 10.000</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="filter-actions">
-                <button class="btn-pixel btn-filter">
+                <select class="filter-select-inline">
+                    <option>Salário</option>
+                    <option>Até R$ 3.000</option>
+                    <option>R$ 3.000 - R$ 6.000</option>
+                    <option>R$ 6.000 - R$ 10.000</option>
+                    <option>Acima de R$ 10.000</option>
+                </select>
+                
+                <button class="btn-filter-inline">
                     <i class="fas fa-search"></i>
                     BUSCAR
                 </button>
-                <button class="btn-pixel btn-clear">
+                <button class="btn-clear-inline">
                     <i class="fas fa-times"></i>
                     LIMPAR
                 </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Área VIP -->
-    <section class="vip-section">
-        <div class="vip-header">
-            <h2 class="vip-title">
-                <img src="<?= $baseUrl ?>/public/imagens/foguete.png" alt="Foguete VIP" class="vip-title-icon">
-                VAGAS VIP
-                <span class="vip-badge">PREMIUM</span>
-            </h2>
-            <p class="vip-description">Oportunidades exclusivas para membros premium</p>
-        </div>
-        
-        <div class="vip-cards">
-            <!-- VIP Card 1: Senior Full Stack -->
-            <div class="vaga-card vip-card">
-                <div class="job-header">
-                    <i class="fas fa-laptop-code job-icon vip-icon"></i>
-                    <span class="job-difficulty vip-difficulty">VIP</span>
-                </div>
-                <h3 class="job-title">Senior Full Stack Developer</h3>
-                <p class="job-company"><i class="fas fa-building"></i> TechCorp Solutions</p>
-                <p class="job-description">
-                    Desenvolvedor sênior full stack para liderar projetos complexos usando React, Node.js e AWS.
-                </p>
-                <div class="job-tags">
-                    <span class="tag vip-tag">React</span>
-                    <span class="tag vip-tag">Node.js</span>
-                    <span class="tag vip-tag">AWS</span>
-                </div>
-                <div class="job-footer">
-                    <span class="job-xp vip-xp">+1500 XP</span>
-                    <button class="btn-apply vip-apply">CANDIDATAR</button>
-                </div>
-            </div>
-            
-            <!-- VIP Card 2: DevOps Engineer -->
-            <div class="vaga-card vip-card">
-                <div class="job-header">
-                    <i class="fas fa-server job-icon vip-icon"></i>
-                    <span class="job-difficulty vip-difficulty">VIP</span>
-                </div>
-                <h3 class="job-title">DevOps Engineer</h3>
-                <p class="job-company"><i class="fas fa-building"></i> CloudTech Inc</p>
-                <p class="job-description">
-                    Engenheiro DevOps especialista em Docker, Kubernetes e CI/CD para ambientes de alta disponibilidade.
-                </p>
-                <div class="job-tags">
-                    <span class="tag vip-tag">Docker</span>
-                    <span class="tag vip-tag">Kubernetes</span>
-                    <span class="tag vip-tag">CI/CD</span>
-                </div>
-                <div class="job-footer">
-                    <span class="job-xp vip-xp">+1300 XP</span>
-                    <button class="btn-apply vip-apply">CANDIDATAR</button>
-                </div>
             </div>
         </div>
     </section>
@@ -137,8 +52,8 @@
     <section class="vagas-list">
         <div class="list-header">
             <h2 class="list-title">
-                <img src="<?= $baseUrl ?>/public/imagens/gold.png" alt="Gold Icon" class="list-title-icon">
                 TODAS AS VAGAS
+                <span class="free-badge">FREE</span>
             </h2>
             <div class="list-controls">
                 <select class="sort-select">
@@ -194,7 +109,7 @@
                                 <span class="tag special">Aprendiz</span>
                             <?php endif; ?>
                         </div>
-                        <button class="btn-apply">
+                        <button class="btn-apply open-login-modal">
                             <i class="fas fa-paper-plane"></i>
                             CANDIDATAR-SE
                         </button>
@@ -220,7 +135,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+400 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -242,7 +157,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+600 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -264,7 +179,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+1000 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -286,7 +201,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+500 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -308,7 +223,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+350 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -330,7 +245,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+550 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -352,7 +267,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+750 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -374,7 +289,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+650 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -396,7 +311,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+900 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -418,7 +333,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+1200 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -440,7 +355,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+200 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
             
@@ -462,17 +377,16 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+300 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Jovem Aprendiz -->
+    <!-- Área VIP -->
     <section class="jovem-aprendiz-section">
         <div class="jovem-aprendiz-header">
             <h2 class="jovem-aprendiz-title">
-                <i class="fas fa-graduation-cap"></i>
                 VAGAS JOVEM APRENDIZ
                 <span class="jovem-aprendiz-badge">INICIANTE</span>
             </h2>
@@ -498,7 +412,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp jovem-aprendiz-xp">+150 XP</span>
-                    <button class="btn-apply jovem-aprendiz-apply">CANDIDATAR</button>
+                    <button class="btn-apply jovem-aprendiz-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -520,7 +434,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp jovem-aprendiz-xp">+200 XP</span>
-                    <button class="btn-apply jovem-aprendiz-apply">CANDIDATAR</button>
+                    <button class="btn-apply jovem-aprendiz-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -542,7 +456,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp jovem-aprendiz-xp">+180 XP</span>
-                    <button class="btn-apply jovem-aprendiz-apply">CANDIDATAR</button>
+                    <button class="btn-apply jovem-aprendiz-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -564,7 +478,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp jovem-aprendiz-xp">+220 XP</span>
-                    <button class="btn-apply jovem-aprendiz-apply">CANDIDATAR</button>
+                    <button class="btn-apply jovem-aprendiz-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -586,7 +500,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp jovem-aprendiz-xp">+170 XP</span>
-                    <button class="btn-apply jovem-aprendiz-apply">CANDIDATAR</button>
+                    <button class="btn-apply jovem-aprendiz-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -608,7 +522,64 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp jovem-aprendiz-xp">+190 XP</span>
-                    <button class="btn-apply jovem-aprendiz-apply">CANDIDATAR</button>
+                    <button class="btn-apply jovem-aprendiz-apply open-login-modal">CANDIDATAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Área VIP -->
+    <section class="vip-section">
+        <div class="vip-header">
+            <h2 class="vip-title">
+                VAGAS VIP
+                <span class="vip-badge">PREMIUM</span>
+            </h2>
+            <p class="vip-description">Oportunidades exclusivas para membros premium</p>
+        </div>
+        
+        <div class="vip-cards">
+            <!-- VIP Card 1: Senior Full Stack -->
+            <div class="vaga-card vip-card">
+                <div class="job-header">
+                    <i class="fas fa-laptop-code job-icon vip-icon"></i>
+                    <span class="job-difficulty vip-difficulty">VIP</span>
+                </div>
+                <h3 class="job-title">Senior Full Stack Developer</h3>
+                <p class="job-company"><i class="fas fa-building"></i> TechCorp Solutions</p>
+                <p class="job-description">
+                    Desenvolvedor sênior full stack para liderar projetos complexos usando React, Node.js e AWS.
+                </p>
+                <div class="job-tags">
+                    <span class="tag vip-tag">React</span>
+                    <span class="tag vip-tag">Node.js</span>
+                    <span class="tag vip-tag">AWS</span>
+                </div>
+                <div class="job-footer">
+                    <span class="job-xp vip-xp">+1500 XP</span>
+                    <button class="btn-apply vip-apply open-login-modal">CANDIDATAR</button>
+                </div>
+            </div>
+            
+            <!-- VIP Card 2: DevOps Engineer -->
+            <div class="vaga-card vip-card">
+                <div class="job-header">
+                    <i class="fas fa-server job-icon vip-icon"></i>
+                    <span class="job-difficulty vip-difficulty">VIP</span>
+                </div>
+                <h3 class="job-title">DevOps Engineer</h3>
+                <p class="job-company"><i class="fas fa-building"></i> CloudTech Inc</p>
+                <p class="job-description">
+                    Engenheiro DevOps especialista em Docker, Kubernetes e CI/CD para ambientes de alta disponibilidade.
+                </p>
+                <div class="job-tags">
+                    <span class="tag vip-tag">Docker</span>
+                    <span class="tag vip-tag">Kubernetes</span>
+                    <span class="tag vip-tag">CI/CD</span>
+                </div>
+                <div class="job-footer">
+                    <span class="job-xp vip-xp">+1300 XP</span>
+                    <button class="btn-apply vip-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
         </div>

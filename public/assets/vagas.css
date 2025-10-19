@@ -46,7 +46,7 @@
 /* --- FILTERS SECTION --- */
 .filters-section {
     background: var(--bg-dark);
-    padding: 3rem 2rem;
+    padding: 1.5rem 2rem;
     border-bottom: 2px solid var(--neon-blue);
 }
 
@@ -55,18 +55,105 @@
     margin: 0 auto;
 }
 
-.filters-title {
+#vagas .filters-title {
     font-family: 'Press Start 2P', monospace;
     font-size: 1.5rem;
     color: var(--neon-blue);
     text-align: center;
-    margin-bottom: 2rem;
-    text-shadow: 0 0 10px var(--neon-blue);
+    margin-bottom: 1rem;
+    text-shadow: none !important;
 }
 
 .filters-title i {
     margin-right: 1rem;
     color: var(--orange);
+}
+
+/* Filtros inline */
+#vagas .filters-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    background: transparent;
+    flex-wrap: wrap;
+}
+
+#vagas .filter-input-inline {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.8rem 1rem;
+    background: var(--bg-darker);
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    color: var(--white);
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#vagas .filter-input-inline:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+#vagas .filter-select-inline {
+    padding: 0.8rem 1rem;
+    background: var(--bg-darker);
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    color: var(--white);
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+#vagas .filter-select-inline:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+#vagas .btn-filter-inline,
+#vagas .btn-clear-inline {
+    padding: 0.8rem 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    border: 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+#vagas .btn-filter-inline {
+    background: transparent;
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+}
+
+#vagas .btn-filter-inline:hover {
+    background: var(--neon-green);
+    color: var(--bg-darker);
+    box-shadow: 0 0 20px var(--neon-green);
+}
+
+#vagas .btn-clear-inline {
+    background: transparent;
+    border-color: var(--red);
+    color: var(--red);
+}
+
+#vagas .btn-clear-inline:hover {
+    background: var(--red);
+    color: var(--bg-darker);
+    box-shadow: 0 0 20px var(--red);
 }
 
 .filters-grid {
@@ -160,7 +247,7 @@
 .vip-section {
     background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a2e 100%);
     padding: 3rem 2rem;
-    border-bottom: 3px solid var(--gold);
+    border-top: 4px solid var(--gold);
     position: relative;
 }
 
@@ -192,13 +279,17 @@
     z-index: 2;
 }
 
-.vip-title {
+#vagas .vip-title {
     font-family: 'Press Start 2P', monospace;
     font-size: 2rem;
     color: var(--gold);
-    text-shadow: 0 0 20px var(--gold);
     margin-bottom: 1rem;
-    animation: vipGlow 2s ease-in-out infinite alternate;
+    text-shadow: none !important;
+    animation: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .vip-title i {
@@ -225,10 +316,6 @@
     }
 }
 
-@keyframes vipGlow {
-    0% { text-shadow: 0 0 20px var(--gold); }
-    100% { text-shadow: 0 0 30px var(--gold), 0 0 40px var(--gold); }
-}
 
 .vip-badge {
     background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
@@ -243,6 +330,16 @@
 @keyframes badgePulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
+}
+
+.free-badge {
+    background: linear-gradient(45deg, var(--neon-green), var(--neon-green-dark));
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    animation: badgePulse 2s ease-in-out infinite;
 }
 
 .vip-description {
@@ -277,11 +374,15 @@
     gap: 1rem;
 }
 
-.list-title {
+#vagas .list-title {
     font-family: 'Press Start 2P', monospace;
     font-size: 1.5rem;
     color: var(--neon-green);
-    text-shadow: 0 0 10px var(--neon-green);
+    text-shadow: none !important;
+    animation: none !important;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .list-title i {
@@ -528,15 +629,17 @@
     margin-bottom: 3rem;
 }
 
-.jovem-aprendiz-title {
+#vagas .jovem-aprendiz-title {
     font-family: 'Press Start 2P', monospace;
     font-size: 1.8rem;
     color: var(--neon-blue);
-    text-shadow: 
-        0 0 10px var(--neon-blue),
-        0 0 20px var(--neon-blue);
     margin-bottom: 1rem;
-    animation: aprendizGlow 3s ease-in-out infinite alternate;
+    text-shadow: none !important;
+    animation: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .jovem-aprendiz-title i {
