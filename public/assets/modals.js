@@ -77,6 +77,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Botões com classe .open-login-modal abrem o modal de login
+    document.querySelectorAll('.open-login-modal').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('modalLogin');
+        });
+    });
+
+    // Botões com classe .open-signup-modal abrem o modal de cadastro
+    document.querySelectorAll('.open-signup-modal').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal('modalSignup');
+        });
+    });
+
     // Clique no overlay fecha qualquer modal aberto
     if (overlay) overlay.addEventListener('click', closeAllModals);
 

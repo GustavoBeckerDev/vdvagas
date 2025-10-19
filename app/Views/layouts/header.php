@@ -15,7 +15,6 @@ $logoPath = $baseUrl . "/public/imagens/logo-trofeu.png";
     <!-- CSS principal -->
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/header.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/home.css">
-    <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/home-pixel.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/footer.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/assets/modals.css">
 

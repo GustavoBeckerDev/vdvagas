@@ -25,7 +25,7 @@
     <section class="hero-planos">
         <div class="hero-container">
             <h1 class="hero-title">
-                <i class="fas fa-rocket title-icon"></i>
+                <img src="<?= $baseUrl ?>/public/imagens/foguete.png" alt="Foguete" class="title-icon">
                 PACOTES DE UPGRADE
             </h1>
             <p class="hero-subtitle">
@@ -52,12 +52,14 @@
     <section class="planos-section">
         <div class="section-header">
             <h2 class="section-title">
-                <i class="fas fa-gamepad"></i>
+                <img src="<?= $baseUrl ?>/public/imagens/gold.png" alt="Gold Icon" class="title-gold-icon left">
                 SELECIONE SEU PACOTE
+                <img src="<?= $baseUrl ?>/public/imagens/gold.png" alt="Gold Icon" class="title-gold-icon right">
             </h2>
         </div>
 
-        <div class="planos-grid">
+        <div class="carousel-container">
+            <div class="carousel-track">
             <!-- PLANO BÁSICO -->
             <div class="plan-card basic">
                 <div class="plan-header">
@@ -213,7 +215,166 @@
                     ADQUIRIR PACOTE
                 </button>
             </div>
-        </div>
+
+            <!-- CARDS DUPLICADOS PARA LOOP CONTÍNUO -->
+            <!-- PLANO BÁSICO (DUPLICADO) -->
+            <div class="plan-card basic">
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="plan-name">BÁSICO</h3>
+                    <div class="plan-level">NÍVEL 1</div>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">R$</span>
+                    <span class="amount">4,90</span>
+                    <span class="period">/mês</span>
+                </div>
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Acesso às vagas essenciais</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Publicação de currículo</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Suporte básico</span>
+                    </div>
+                    <div class="feature-item disabled">
+                        <i class="fas fa-times"></i>
+                        <span>Candidaturas limitadas</span>
+                    </div>
+                </div>
+                <button class="plan-button">
+                    <i class="fas fa-download"></i>
+                    ADQUIRIR PACOTE
+                </button>
+            </div>
+
+            <!-- PLANO AVANÇADO (DUPLICADO) -->
+            <div class="plan-card advanced">
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="plan-name">AVANÇADO</h3>
+                    <div class="plan-level">NÍVEL 2</div>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">R$</span>
+                    <span class="amount">9,90</span>
+                    <span class="period">/mês</span>
+                </div>
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Maior visibilidade do perfil</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Mais candidaturas por mês</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Alertas personalizados</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Suporte prioritário</span>
+                    </div>
+                </div>
+                <button class="plan-button">
+                    <i class="fas fa-download"></i>
+                    ADQUIRIR PACOTE
+                </button>
+            </div>
+
+            <!-- PLANO PREMIUM (DUPLICADO) -->
+            <div class="plan-card premium featured">
+                <div class="featured-badge">
+                    <i class="fas fa-crown"></i>
+                    RECOMENDADO
+                </div>
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="plan-name">PREMIUM</h3>
+                    <div class="plan-level">NÍVEL 3</div>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">R$</span>
+                    <span class="amount">19,90</span>
+                    <span class="period">/mês</span>
+                </div>
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Candidaturas ilimitadas</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Perfil em destaque</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Acesso a vagas exclusivas</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Suporte VIP 24/7</span>
+                    </div>
+                </div>
+                <button class="plan-button">
+                    <i class="fas fa-download"></i>
+                    ADQUIRIR PACOTE
+                </button>
+            </div>
+
+            <!-- PLANO EMPRESA (DUPLICADO) -->
+            <div class="plan-card enterprise">
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="plan-name">EMPRESA</h3>
+                    <div class="plan-level">NÍVEL MAX</div>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">R$</span>
+                    <span class="amount">29,90</span>
+                    <span class="period">/mês</span>
+                </div>
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Vagas ilimitadas</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Gestão personalizada</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Relatórios avançados</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Suporte dedicado</span>
+                    </div>
+                </div>
+                <button class="plan-button">
+                    <i class="fas fa-download"></i>
+                    ADQUIRIR PACOTE
+                </button>
+            </div>
+
+            </div> <!-- Fim carousel-track -->
+        </div> <!-- Fim carousel-container -->
     </section>
 
 </main>

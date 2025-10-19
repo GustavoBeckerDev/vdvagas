@@ -1,9 +1,7 @@
-<main class="home pixel-game">
+<main id="home" class="home pixel-game">
 
     <!-- HERO GAMIFICADO -->
     <section class="hero-game">
-        <div class="pixel-particles"></div>
-        
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-badges">
@@ -33,15 +31,15 @@
                 <h2 class="subtitle-pixel">Resolvendo o bug entre <span class="highlight">talentos</span> e <span class="highlight">oportunidades</span></h2>
                 
                 <div class="hero-stats">
-                    <div class="stat-item">
+                    <div class="hero-stat-item">
                         <i class="fas fa-gamepad stat-icon"></i>
                         <span class="stat-value">Gamificado</span>
                     </div>
-                    <div class="stat-item">
+                    <div class="hero-stat-item">
                         <i class="fas fa-trophy stat-icon"></i>
                         <span class="stat-value">Conquistas</span>
                     </div>
-                    <div class="stat-item">
+                    <div class="hero-stat-item">
                         <i class="fas fa-chart-line stat-icon"></i>
                         <span class="stat-value">Trilhas XP</span>
                     </div>
@@ -70,9 +68,7 @@
     <section class="quests-section">
         <div class="section-header">
             <h2 class="pixel-title">
-                <i class="fas fa-sword title-icon"></i>
                 TRILHAS DE CONQUISTAS
-                <i class="fas fa-sword title-icon"></i>
             </h2>
             <p class="section-subtitle">Complete missões e evolua sua carreira como um verdadeiro jogador</p>
         </div>
@@ -176,9 +172,7 @@
     <section class="jobs-game">
         <div class="section-header">
             <h2 class="pixel-title">
-                <i class="fas fa-briefcase title-icon"></i>
                 VAGAS DISPONÍVEIS
-                <i class="fas fa-briefcase title-icon"></i>
             </h2>
             <p class="section-subtitle">Escolha sua próxima aventura profissional</p>
         </div>
@@ -203,7 +197,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+500 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -226,7 +220,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+300 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -249,7 +243,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+750 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -272,7 +266,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+200 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -295,7 +289,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+400 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -318,7 +312,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+1000 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -341,7 +335,7 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+500 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
 
@@ -364,13 +358,13 @@
                 </div>
                 <div class="job-footer">
                     <span class="job-xp">+300 XP</span>
-                    <button class="btn-apply">CANDIDATAR</button>
+                    <button class="btn-apply open-login-modal">CANDIDATAR</button>
                 </div>
             </div>
         </div>
 
         <div class="see-all-pixel">
-            <a href="#" class="btn-pixel btn-primary">
+            <a href="#" class="btn-pixel btn-primary open-signup-modal">
                 <span><i class="fas fa-bullseye"></i> EXPLORAR TODAS AS VAGAS</span>
             </a>
         </div>
@@ -380,9 +374,7 @@
     <section class="about-game">
         <div class="section-header">
             <h2 class="pixel-title">
-                <i class="fas fa-gamepad title-icon"></i>
-                SOBRE O JOGO
-                <i class="fas fa-gamepad title-icon"></i>
+                SOBRE O VDVAGAS
             </h2>
             <p class="section-subtitle">
                 Nossa missão é transformar a busca por emprego em uma jornada épica e recompensadora
@@ -390,7 +382,7 @@
         </div>
 
         <div class="about-cards-pixel">
-            <div class="about-card-pixel">
+            <div class="about-card-pixel card-blue">
                 <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
                 <h3 class="card-title">Inovação</h3>
                 <p class="card-description">
@@ -403,8 +395,8 @@
                 </div>
             </div>
 
-            <div class="about-card-pixel featured">
-                <div class="card-icon legendary"><i class="fas fa-handshake"></i></div>
+            <div class="about-card-pixel card-yellow">
+                <div class="card-icon"><i class="fas fa-handshake"></i></div>
                 <h3 class="card-title">Confiança</h3>
                 <p class="card-description">
                     Parcerias sólidas e transparentes são nosso alicerce. 
@@ -416,7 +408,7 @@
                 </div>
             </div>
 
-            <div class="about-card-pixel">
+            <div class="about-card-pixel card-purple">
                 <div class="card-icon"><i class="fas fa-globe"></i></div>
                 <h3 class="card-title">Conexão</h3>
                 <p class="card-description">
@@ -445,10 +437,10 @@
                     cada candidatura é uma missão, cada conquista é celebrada, e cada passo te aproxima do seu objetivo final.
                 </p>
                 <ul class="feature-list">
-                    <li><i class="fas fa-bolt list-icon"></i> Sistema de XP e níveis de progressão</li>
-                    <li><i class="fas fa-trophy list-icon"></i> Badges e conquistas desbloqueáveis</li>
-                    <li><i class="fas fa-bullseye list-icon"></i> Trilhas personalizadas de carreira</li>
-                    <li><i class="fas fa-chart-bar list-icon"></i> Dashboard com estatísticas em tempo real</li>
+                    <li class="feature-green"><i class="fas fa-bolt list-icon"></i> Sistema de XP e níveis de progressão</li>
+                    <li class="feature-blue"><i class="fas fa-trophy list-icon"></i> Badges e conquistas desbloqueáveis</li>
+                    <li class="feature-purple"><i class="fas fa-bullseye list-icon"></i> Trilhas personalizadas de carreira</li>
+                    <li class="feature-pink"><i class="fas fa-chart-bar list-icon"></i> Dashboard com estatísticas em tempo real</li>
                 </ul>
                 <a href="<?= $baseUrl ?>/planos" class="btn-pixel btn-primary">
                     <i class="fas fa-rocket"></i> <span>COMEÇAR AGORA</span>
@@ -461,9 +453,7 @@
     <section class="contact-game">
         <div class="section-header">
             <h2 class="pixel-title">
-                <i class="fas fa-envelope title-icon"></i>
-                ENTRE EM CONTATO
-                <i class="fas fa-envelope title-icon"></i>
+                CANAL DE COMUNICAÇÃO
             </h2>
             <p class="section-subtitle">Envie uma mensagem e desbloqueie suporte exclusivo</p>
         </div>
@@ -508,19 +498,19 @@
                 </div>
 
                 <div class="social-section">
-                    <h3 class="social-title"><i class="fas fa-share-alt"></i> NOS SIGA NAS REDES</h3>
+                    <h3 class="social-title">NOS SIGA NAS REDES</h3>
                     <div class="social-icons-pixel">
                         <a href="#" class="social-link" title="Instagram">
-                            <i class="fab fa-instagram"></i>
+                            <img src="<?= $baseUrl ?>/public/imagens/instagram.png" alt="Instagram" class="social-icon-img">
                         </a>
                         <a href="#" class="social-link" title="Facebook">
-                            <i class="fab fa-facebook"></i>
+                            <img src="<?= $baseUrl ?>/public/imagens/facebook.png" alt="Facebook" class="social-icon-img">
                         </a>
                         <a href="#" class="social-link" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
+                            <img src="<?= $baseUrl ?>/public/imagens/linkedin.png" alt="LinkedIn" class="social-icon-img">
                         </a>
                         <a href="#" class="social-link" title="YouTube">
-                            <i class="fab fa-youtube"></i>
+                            <img src="<?= $baseUrl ?>/public/imagens/youtube.png" alt="YouTube" class="social-icon-img">
                         </a>
                     </div>
                 </div>
