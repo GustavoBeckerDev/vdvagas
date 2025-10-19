@@ -3,11 +3,11 @@
 
 <!-- Modal Login -->
 <div class="modal" id="modalLogin" role="dialog" aria-labelledby="modalLoginTitle" aria-modal="true">
-    <div class="modal-content">
+    <div id="login" class="modal-content">
         <button class="modal-close" aria-label="Fechar modal">&times;</button>
 
-        <h2 id="modalLoginTitle" class="text-left">Login</h2>
-        <p class="text-left">Faça login digitando seu e-mail e senha.</p>
+        <h2 id="modalLoginTitle" class="modal-title">ACESSO AO SISTEMA</h2>
+        <p class="modal-subtitle">> Insira suas credenciais de acesso_</p>
 
         <form id="loginForm" novalidate>
             <div class="form-group">
@@ -38,11 +38,11 @@
 
 <!-- Modal de Cadastro -->
 <div class="modal" id="modalSignup" role="dialog" aria-labelledby="modalSignupTitle" aria-modal="true">
-    <div class="modal-content">
+    <div id="cadastro" class="modal-content">
         <button class="modal-close" aria-label="Fechar modal">&times;</button>
 
-        <h2 id="modalSignupTitle" class="text-left">Crie sua conta</h2>
-        <p class="text-left">Preencha os dados para criar sua conta.</p>
+        <h2 id="modalSignupTitle" class="modal-title">NOVO JOGADOR</h2>
+        <p class="modal-subtitle">> Registre-se para começar sua jornada_</p>
 
         <form id="signupForm" novalidate>
             <div class="form-group">

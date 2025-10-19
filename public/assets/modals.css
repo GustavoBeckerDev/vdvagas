@@ -1,8 +1,20 @@
 /* ============================================
-   MODAIS PIXEL ART GAMIFICADO
+   MODAIS PIXEL ART GAMIFICADO - VD VAGAS
    ============================================ */
 
-/* Fundo escurecido com efeito pixel */
+/* --- VARIÁVEIS --- */
+:root {
+    --bg-dark: #0a1520;
+    --bg-darker: #050a10;
+    --neon-green: #00ff88;
+    --neon-blue: #00d4ff;
+    --neon-purple: #aa00ff;
+    --gold: #ffd700;
+    --white: #ffffff;
+    --gray: #cccccc;
+}
+
+/* --- OVERLAY --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -16,54 +28,35 @@
     animation: overlayFadeIn 0.3s ease;
 }
 
+.modal-overlay.active {
+    display: block;
+}
+
 @keyframes overlayFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Estrutura geral do modal - Estilo Pixel Art */
+/* --- ESTRUTURA GERAL DO MODAL --- */
 .modal {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.9);
-    background: linear-gradient(145deg, #0f1f2f 0%, #0a1520 100%);
-    border: 4px solid #00ff88;
+    background: linear-gradient(145deg, #0f1f2f 0%, var(--bg-dark) 100%);
+    border: 3px solid var(--neon-green);
+    border-radius: 10px;
     box-shadow: 
         0 0 30px rgba(0, 255, 136, 0.4),
         inset 0 0 30px rgba(0, 255, 136, 0.05);
-    padding: 28px 26px;
+    padding: 2rem;
     z-index: 1000;
     display: none;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    color: #fff;
-    width: 400px;
+    color: var(--white);
+    width: 450px;
     max-width: 94%;
     font-family: 'VT323', monospace;
-}
-
-/* Cantos decorativos pixel art */
-.modal::before,
-.modal::after {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border: 3px solid #00ff88;
-}
-
-.modal::before {
-    top: -3px;
-    left: -3px;
-    border-right: none;
-    border-bottom: none;
-}
-
-.modal::after {
-    bottom: -3px;
-    right: -3px;
-    border-left: none;
-    border-top: none;
 }
 
 /* Animação ao abrir */
@@ -79,16 +72,11 @@
     100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 }
 
-/* Ajustes para ativar o fundo opaco */
-.modal-overlay.active {
-    display: block;
-}
-
-/* Botão de fechar modal - Pixel Art */
+/* --- BOTÃO DE FECHAR --- */
 .modal-close {
     background: transparent;
-    border: 2px solid #00ff88;
-    color: #00ff88;
+    border: none;
+    color: var(--neon-green);
     font-size: 1.5rem;
     position: absolute;
     top: 15px;
@@ -105,453 +93,315 @@
 }
 
 .modal-close:hover {
-    background: #00ff88;
-    color: #0a1520;
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+    color: var(--neon-blue);
     transform: rotate(90deg);
 }
 
-/* ==========================
-    Estilos específicos do login (migrado de modalLogin.css)
-    ========================== */
+/* ============================================
+   MODAL LOGIN - ESTILO GAMIFICADO
+   ============================================ */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Sansation", sans-serif;
+#login .modal-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.2rem;
+    color: var(--neon-green);
+    margin-bottom: 0.5rem;
+    text-align: left;
 }
 
-:root {
-    --green:#00cc66;
-    --bg:#000;
-    --panel-bg:#000;
-    --text:#e6e6e6;
-    --muted:#9a9a9a;
-    --radius:18px; 
+#login .modal-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    text-align: left;
 }
 
-.login-inner{
-    width:360px;
-    max-width:92vw;
-    color:var(--text);
-    font-family:var(--font-stack);
+#login .form-group {
+    margin-bottom: 1.2rem;
 }
 
-.login-inner .titulo{
-    font-size:28px;
-    color:var(--green);
-    font-weight:800;
-    margin-bottom:12px;
+#login .form-group label {
+    display: block;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    color: var(--neon-green);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
 }
 
-.login-inner .conteudo{
-    color:var(--muted);
-    margin-bottom:18px;
-    font-size:14px;
-}
-
-.login-form{display:flex;flex-direction:column;gap:14px}
-
-.login-form label{display:block;font-size:13px;color:var(--text);margin-bottom:6px}
-
-/* Icon visuals for inputs inside modal */
-.input-icon {
+#login .input-icon {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-.input-icon input {
+#login .input-icon input {
     width: 100%;
-    padding: 12px 48px 12px 44px; /* espaço para ícone à direita e à esquerda */
-    background: transparent;
-    border: 2px solid var(--green);
+    padding: 0.8rem 3rem 0.8rem 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--neon-green);
     border-radius: 8px;
-    color: var(--text);
-    font-size: 14px;
-    outline: none;
-    transition: border-color .15s ease, box-shadow .15s ease;
-}
-
-.input-icon-left {
-    position: absolute;
-    left: 12px;
-    color: var(--green);
-    font-size: 18px;
-    pointer-events: none; /* não captura clique */
-}
-
-.input-icon-right {
-    position: absolute;
-    right: 12px;
-    color: var(--green);
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.input-icon-right:hover {
-    color: #00b95a;
-}
-
-.input-icon input:focus {
-    border-color: #00cc66;
-    box-shadow: 0 0 0 4px rgba(0, 204, 102, 0.06);
-}
-
-.input-with-icon .toggle-password{background:transparent;border:0;color:var(--green);cursor:pointer;font-size:18px}
-
-.forgot a{color:var(--green);text-decoration:none;font-size:13px}
-
-.btn-primary{
-    display:block;width:100%;padding:12px 18px;border-radius:8px;border:2px solid var(--green);background:transparent;color:var(--text);font-weight:700;cursor:pointer;text-align:center
-}
-
-.rem-remove-placeholder{ display:block; }
-
-.cadastrar{margin-top:8px;text-align:center}
-.cadastrar button{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:6px 10px;border-radius:6px;color:var(--text);cursor:pointer}
-
-/* Ensure the modal-content area is spaced nicely */
-.modal .modal-content{padding:34px 30px 36px}
-
-/* Responsive tweaks */
-@media (max-width:420px){.login-inner{width:92vw}.modal{padding:20px}}
-
-/* Estilos para o modal de login */
-#modalLogin {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #00cc66;
-    border: 2px solid #00cc66;
-    border-radius: 10px;
-    padding: 20px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#modalLogin h2,
-#modalLogin p,
-#modalLogin label {
-    text-align: left;
-}
-
-#modalLogin .form-group label {
-    text-align: left;
-    color: #00cc66; /* labels do login em verde */
-    margin-bottom: 5px;
-}
-
-#modalLogin .modal-content {
-    color: #ffffff; /* alterado para branco conforme solicitado */
-}
-
-#modalLogin h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #00ff88;
-    font-family: 'Orbitron', sans-serif;
-    text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
-    text-transform: uppercase;
-}
-
-#modalLogin p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #cccccc;
+    color: var(--white);
     font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-#modalLogin .form-group {
-    margin-bottom: 15px;
+#login .input-icon input:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    background: rgba(0, 212, 255, 0.05);
 }
 
-#modalLogin .input-icon {
-    position: relative;
-}
-
-#modalLogin .input-icon input {
-    width: 100%;
-    /* espaço à esquerda para o ícone e à direita para o ícone de olho */
-    padding: 10px 44px 10px 44px;
-    border: 1px solid #00cc66;
-    border-radius: 5px;
-    background-color: #000;
-    color: #00cc66;
-}
-
-#modalLogin .input-icon .icon {
+#login .input-icon-left {
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
+    left: 1rem;
+    color: var(--neon-green);
+    font-size: 1.2rem;
+    pointer-events: none;
 }
 
-#modalLogin .forgot-password {
+#login .input-icon-right {
+    position: absolute;
+    right: 1rem;
+    color: var(--neon-green);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#login .input-icon-right:hover {
+    color: var(--neon-blue);
+}
+
+#login .input-icon input::placeholder {
+    color: rgba(204, 204, 204, 0.5);
+}
+
+#login .forgot-password {
     display: block;
-    font-size: 12px;
-    color: #00cc66; /* link permanece verde */
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: var(--neon-blue);
     text-decoration: none;
-    margin-top: 5px;
-    text-align: right; /* alinhado à direita conforme solicitado */
+    margin-top: 0.5rem;
+    text-align: right;
+    transition: color 0.3s ease;
 }
 
-#modalLogin .login-button {
-    background-color: transparent;
-    color: #00ff88;
-    border: 3px solid #00ff88;
-    padding: 12px;
+#login .forgot-password:hover {
+    color: var(--neon-green);
+}
+
+#login .login-button {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    padding: 1rem 2rem;
+    border: 3px solid var(--neon-green);
+    background: transparent;
+    color: var(--neon-green);
     cursor: pointer;
     width: 100%;
-    margin-bottom: 12px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.7rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     transition: all 0.3s ease;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
 }
 
-#modalLogin .login-button:hover {
-    background-color: #00ff88;
-    color: #0a1520;
+#login .login-button:hover {
+    background: var(--neon-green);
+    color: var(--bg-dark);
     box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
     transform: translateY(-2px);
 }
 
-
-
-#modalLogin .divider {
-    margin: 20px 0;
-    border-top: 1px solid #00cc66;
-}
-
-/* alinhamento do texto de cadastro no modal de login */
-#modalLogin .signup-link {
-    font-size: 12px;
-    color: #ffffff; /* texto principal em branco */
-    text-align: right;
-}
-
-#modalLogin .signup-link a {
-    color: #00cc66;
-    text-decoration: none;
-}
-
-/* Copiar estilos do modal de login para o modal de cadastro */
-#modalSignup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #00cc66;
-    border: 2px solid #00cc66;
-    border-radius: 10px;
-    padding: 20px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#modalSignup h2,
-#modalSignup p,
-#modalSignup label {
-    text-align: left;
-}
-
-#modalSignup .form-group label {
-    text-align: left;
-    display: block;
-    margin-bottom: 5px;
-}
-
-#modalSignup .modal-content {
+#login .signup-link {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: var(--gray);
     text-align: center;
 }
 
-#modalSignup h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #00ff88;
-    font-family: 'Orbitron', sans-serif;
-    text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+#login .signup-link a {
+    color: var(--neon-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#login .signup-link a:hover {
+    color: var(--neon-blue);
+}
+
+/* ============================================
+   MODAL CADASTRO - ESTILO GAMIFICADO
+   ============================================ */
+
+#cadastro .modal-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+#cadastro .modal-subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+#cadastro .form-group {
+    margin-bottom: 1.2rem;
+}
+
+#cadastro .form-group label {
+    display: block;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
 }
 
-#modalSignup p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #cccccc;
-    font-family: 'VT323', monospace;
-}
-
-#modalSignup .form-group {
-    margin-bottom: 15px;
-}
-
-#modalSignup .input-icon {
+#cadastro .input-icon {
     position: relative;
-}
-
-#modalSignup .input-icon input {
+    display: flex;
+    align-items: center;
     width: 100%;
-    /* espaço à esquerda para o ícone e à direita para o ícone de olho */
-    padding: 10px 44px 10px 44px;
-    border: 1px solid #00cc66;
-    border-radius: 5px;
-    background-color: #000;
-    color: #00cc66;
 }
 
-#modalSignup .input-icon .icon {
+#cadastro .input-icon input {
+    width: 100%;
+    padding: 0.8rem 3rem 0.8rem 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    color: var(--white);
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#cadastro .input-icon input:focus {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 15px rgba(170, 0, 255, 0.5);
+    background: rgba(170, 0, 255, 0.05);
+}
+
+#cadastro .input-icon-left {
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
+    left: 1rem;
+    color: var(--gold);
+    font-size: 1.2rem;
+    pointer-events: none;
 }
 
-#modalSignup .forgot-password {
-    display: block;
-    font-size: 12px;
-    color: #00cc66;
-    text-decoration: none;
-    margin-top: 5px;
+#cadastro .input-icon-right {
+    position: absolute;
+    right: 1rem;
+    color: var(--gold);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-#modalSignup .login-button {
-    background-color: transparent;
-    color: #ffd700;
-    border: 3px solid #ffd700;
-    padding: 12px;
+#cadastro .input-icon-right:hover {
+    color: var(--neon-purple);
+}
+
+#cadastro .input-icon input::placeholder {
+    color: rgba(204, 204, 204, 0.5);
+}
+
+#cadastro .signup-type {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+#cadastro .signup-type-item {
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+#cadastro .signup-type-item input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--gold);
+    cursor: pointer;
+}
+
+#cadastro .login-button {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    padding: 1rem 2rem;
+    border: 3px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
     cursor: pointer;
     width: 100%;
-    margin-bottom: 12px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.7rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     transition: all 0.3s ease;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
-#modalSignup .login-button:hover {
-    background-color: #ffd700;
-    color: #0a1520;
+#cadastro .login-button:hover {
+    background: var(--gold);
+    color: var(--bg-dark);
     box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
     transform: translateY(-2px);
 }
 
-
-
-#modalSignup .divider {
-    margin: 20px 0;
-    border-top: 1px solid #00cc66;
+#cadastro .signup-link {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: var(--gray);
+    text-align: center;
 }
 
-#modalSignup .signup-link {
-    font-size: 12px;
-    color: #ffffff; /* texto principal em branco */
-    text-align: right;
-    display: block;
+#cadastro .signup-link a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-#modalSignup .signup-link a {
-    color: #00cc66;
-    text-decoration: underline; /* Sublinha o link 'Faça login' */
+#cadastro .signup-link a:hover {
+    color: var(--neon-purple);
 }
 
-/* Estilos para os checkboxes do signup */
-#modalSignup .signup-type{
-    display:flex;
-    gap:16px;
-    margin:10px 0 14px 0;
-    justify-content:flex-start;
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 480px) {
+    .modal {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    #login .modal-title,
+    #cadastro .modal-title {
+        font-size: 1rem;
+        gap: 0.5rem;
+    }
+    
+    #login .login-button,
+    #cadastro .login-button {
+        font-size: 0.7rem;
+        padding: 0.8rem 1.5rem;
+    }
 }
-
-#modalSignup .signup-type-item{    
-    font-size:14px;
-    color:var(--text);
-}
-
-#modalSignup .signup-type-item input{    
-    margin-right:6px;
-}
-
-/* Radios do signup: visualizar em verde e melhorar tamanho/alcance */
-#modalSignup .signup-type-item input[type="radio"]{
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-    margin-right: 8px;
-    accent-color: var(--green); /* browsers que suportam */
-    appearance: radio;
-    -webkit-appearance: radio; /* fallback */
-}
-
-/* Forçar o label do item do signup a usar a cor verde definida */
-#modalSignup .signup-type-item{
-    color: var(--green);
-}
-
-/* Forçar cor verde nos inputs e textos dentro dos modais */
-#modalLogin, #modalSignup, .login-inner {
-    color: var(--green);
-}
-
-/* Inputs, textareas e selects dentro dos modais devem usar verde e borda verde */
-#modalLogin input,
-#modalLogin textarea,
-#modalLogin select,
-#modalSignup input,
-#modalSignup textarea,
-#modalSignup select,
-.login-inner input,
-.login-inner textarea,
-.login-inner select {
-    color: var(--green);
-    border-color: var(--green);
-}
-
-/* Placeholder com leve opacidade para legibilidade */
-#modalLogin input::placeholder,
-#modalLogin textarea::placeholder,
-#modalSignup input::placeholder,
-#modalSignup textarea::placeholder,
-.login-inner input::placeholder,
-.login-inner textarea::placeholder {
-    color: rgba(0, 204, 102, 0.6);
-}
-
-/* Textos menores e rótulos também em verde para consistência */
-#modalLogin label,
-#modalSignup label,
-.login-inner .conteudo,
-.signup-type-item,
-.remember {
-    color: var(--green);
-}
-
-/* Links dentro dos modais */
-#modalLogin a,
-#modalSignup a,
-.login-inner a {
-    color: var(--green);
-}
-
-/* Estilo para o fundo opaco quando o modal estiver aberto */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-/* Fim dos ajustes adicionais no modal de login */

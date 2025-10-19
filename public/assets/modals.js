@@ -15,9 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // - Exibe o overlay da página e o modal identificado por modalId.
     // - Usa classes CSS quando disponíveis, mas também aplica `display` inline
     //   como fallback caso a folha de estilo ainda não esteja carregada.
+    // - Fecha todos os outros modais antes de abrir o novo.
     function openModal(modalId) {
         const modal = document.getElementById(modalId);
         const overlayElement = document.getElementById('modalOverlay');
+
+        // Primeiro, fecha todos os modais abertos
+        modals.forEach(m => {
+            if (m.id !== modalId) {
+                m.style.display = 'none';
+                m.classList.remove('active');
+            }
+        });
 
         if (overlayElement) {
             // Make overlay visible
